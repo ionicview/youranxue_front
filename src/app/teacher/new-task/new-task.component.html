@@ -1,0 +1,43 @@
+<!--Panel-->
+<div class="card">
+  <h3 class="card-header primary-color white-text">添加新课程</h3>
+  <div class="card-body">
+    <form [formGroup]="myForm" (ngSubmit)="doPost(myForm.value)">
+      <div class="container">
+        <div class="md-form form-sm  form-group">
+          <label for="className" class="blue-text">课程名称</label>
+          <input mdbActive type="text" id="className" class="form-control" formControlName="className">
+          <div *ngIf="myForm.controls['className'].touched">
+            <div class="alert alert-danger" *ngIf="myForm.controls['className'].errors?.required">This is requierd!</div>
+          </div>
+        </div>
+
+
+        <div class="md-form form-sm  form-group">
+          <label for="subjectName" class="blue-text">学科</label>
+          <input mdbActive type="text" id="subjectName" class="form-control" formControlName="subjectName">
+        </div>
+        <div class="md-form form-sm  form-group">
+          <label class="blue-text">授课对象</label>
+          <input mdbActive type="text" id="form1" class="form-control">
+        </div>
+        <div class="md-form form-sm  form-group">
+          <label class="blue-text">教材版本 </label>
+          <input mdbActive type="text" id="form1" class="form-control">
+        </div>
+        <div class="md-form form-sm  form-group">
+          <label class="blue-text">人数 </label>
+          <input mdbActive type="text" id="form1" class="form-control">
+        </div>
+        <div class="md-form form-sm  form-group">
+          <label class="blue-text">课程截至日期</label>
+          <input mdbActive type="text" id="form1" class="form-control">
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary waves-light" mdbRippleRadius [disabled]="!myForm.valid">提交申请</button>
+        <a class="btn btn-primary waves-light" mdbRippleRadius>取消</a>
+      </div>
+    </form>
+  </div>
+  <!--/.Panel-->
