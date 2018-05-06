@@ -33,7 +33,21 @@
       <li>
         <ul class="collapsible collapsible-accordion">
           <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
-
+            <!-- Collapsible link -->
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-chevron-right"></i>测试</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li routerLinkActive="active">
+                    <a routerLink="/home" class="waves-effect" mdbRippleRadius>Home</a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/all-resources" class="waves-effect" mdbRippleRadius>所有资源</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
             <!-- Collapsible link -->
             <mdb-item>
               <mdb-item-head mdbRippleRadius>
@@ -47,7 +61,7 @@
                     <a routerLink="/view-class-student" class="waves-effect" mdbRippleRadius>查看学习任务</a>
                   </li>
                   <li>
-                    <a href="#" class="waves-effect" mdbRippleRadius>课程列表</a>
+                    <a routerLink="/task-list" class="waves-effect" mdbRippleRadius>课程列表</a>
                   </li>
                 </ul>
               </mdb-item-body>

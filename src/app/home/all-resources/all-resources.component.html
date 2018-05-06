@@ -1,9 +1,198 @@
 <!-- <div class="row"> -->
 <app-header></app-header>
-<!-- </div> -->
+
 <div class="row">&nbsp;</div>
+<table class="table table-sm table-responsive table-hover w-auto">
+  <tbody>
+    <tr class="md-9">
+      <td scope="row" class="font-weight-bold align-middle"> 学校</td>
+      <div class="btn-group">
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>小学</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-purple btn-sm" mdbWavesEffect>初中</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>高中</button>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <td scope="row" class="font-weight-bold align-middle"> 学科</td>
+      <div class="btn-group">
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>语文</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn  btn-purple btn-sm" mdbWavesEffect>数学</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>英语</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>品德与社会</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>科学</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>音乐</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>美术</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>信息技术</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>艺术</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>劳动技术</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>公共卫生教育</button>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <td scope="row" class="font-weight-bold align-middle">版本</td>
+      <div class="btn-group">
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>北师大2011标准版</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-purple btn-sm" mdbWavesEffect>北京20111标准版</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>奥数2011课程版</button>
+        </td>
+      </div>
+    </tr>
+    <tr>
+      <td scope="row" class="font-weight-bold align-middle">年级</td>
+      <div class="btn-group">
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>一年级上册（2013年6月第1版）</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>二年级上册（2013年6月第1版）</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-outline-secondary btn-sm" mdbWavesEffect>三年级上册（2013年6月第1版）</button>
+        </td>
+        <td class="d-sm-table-cell">
+          <button type="button" class="btn btn-purple btn-sm" mdbWavesEffect>四年级上册（2013年6月第1版）</button>
+        </td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+<hr>
 <div class="row">
-  <div class="col-md-9">
-      <tree-root [focused]="true" [nodes]="nodes"></tree-root>
+  <div class="col-md-4">
+    <h5 class="card-header primary-color white-text">教材目录</h5>
+    <div class="card">
+      <!--Card content-->
+      <div class="card-body">
+        <!--教材目录-->
+        <div class="row">
+          <div class="col-md-9">
+            <tree-root [focused]="true" [nodes]="nodes"></tree-root>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <!--Card content-->
+      <div class="card-body">
+        <!--教材目录-->
+        <div class="row">
+          <div class="col-md-11">
+
+            <!--Section: Magazine v.1-->
+            <section class="magazine-section text-center">
+
+              <!--Grid row-->
+              <div class="row text-left">
+
+                <!--Grid column-->
+                <!-- <div class="col-lg-6 col-md-12"> -->
+                <div>
+
+                  <!--Small news-->
+                  <div class="single-news">
+
+                    <div class="row">
+
+                      <div class="col-md-3">
+                        <p class="font-weight-bold blue-text">绿色蝈蝈课后作业</p>
+                        <!--Image-->
+                        <div class="view overlay rounded z-depth-1 waves-light" mdbWavesEffect>
+                          <img src="https://mdbootstrap.com/img/Photos/Others/images/48.jpg" class="img-fluid" alt="Minor sample post image">
+                        </div>
+                      </div>
+
+                      <!--Excerpt-->
+                      <div class="col-md-9">
+                        <p class="dark-grey-text">
+                          <strong>22/08/2018</strong>
+                        </p>
+                        简介：
+                        <br> 本作业为蝈蝈老师聚集12年教学经验，倾力奉献制作
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-outline-info  btn-rounded btn-sm" mdbWavesEffect>收藏</button>
+                        <button type="button" class="btn btn-outline-warning btn-rounded btn-sm" mdbWavesEffect>下载</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/Small news-->
+                  <!--Small news-->
+                  <div class="single-news">
+
+                    <div class="row">
+
+                      <div class="col-md-3">
+                        <p class="font-weight-bold blue-text">绿色蝈蝈课后作业</p>
+                        <!--Image-->
+                        <div class="view overlay rounded z-depth-1 waves-light" mdbWavesEffect>
+                          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(56).jpg" class="img-fluid" alt="Minor sample post image">
+                        </div>
+                      </div>
+
+                      <!--Excerpt-->
+                      <div class="col-md-9">
+                        <p class="dark-grey-text">
+                          <strong>22/08/2018</strong>
+                        </p>
+                        简介：
+                        <br> 本作业为蝈蝈老师聚集12年教学经验，倾力奉献制作
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-outline-info  btn-rounded btn-sm" mdbWavesEffect>收藏</button>
+                        <button type="button" class="btn btn-outline-warning btn-rounded btn-sm" mdbWavesEffect>下载</button>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/Small news-->
+
+
+                </div>
+                <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+            </section>
+            <!--/Section: Magazine v.1-->
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

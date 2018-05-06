@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-resources.component.scss']
 })
 export class AllResourcesComponent implements OnInit {
-
+  public radioModel: string = 'Left';
   constructor() { }
 
   ngOnInit() {
