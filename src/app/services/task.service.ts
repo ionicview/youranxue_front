@@ -1,10 +1,11 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NewTask } from '../model/newtask';
+import { NewTask } from '../model/task/newtask';
 import { Observable, of } from 'rxjs';
-import { catchError,  tap } from 'rxjs/operators';
+import { catchError, tap} from 'rxjs/operators';
 import { MessageService } from './message.service';
+import { InitNewTask } from '../model/task/initNewTask';
 const API_URL = environment.apiUrl;
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,6 +27,13 @@ export class TaskService {
       catchError(this.handleError<NewTask>('addHero'))
     );
   }
+
+  initNewTask(): Observable<InitNewTask> {
+    return this.http.get<InitNewTask>(`${API_URL}/task/initNewTask`);
+
+
+  }
+
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {

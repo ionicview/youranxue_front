@@ -13,25 +13,25 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="colorSelect" formControlName="subjectName" class="colorful-select dropdown-primary" placeholder="请选择学科"></mdb-select>
+            <mdb-select [options]="subjectSelect"  class="colorful-select dropdown-primary" placeholder="请选择学科"></mdb-select>
             <label class="font-weight-bold blue-text">学科</label>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="colorSelect" class="colorful-select dropdown-primary" placeholder="请选择授课对象"></mdb-select>
+            <mdb-select [options]="teachTargetSelect"  class="colorful-select dropdown-primary" placeholder="请选择授课对象"></mdb-select>
             <label class="font-weight-bold blue-text">授课对象</label>
           </div>
           <div class="col-md-3">
-            <mdb-select [options]="colorSelect" class="colorful-select dropdown-primary" placeholder="请选择学期"></mdb-select>
+            <mdb-select [options]="termSelect" class="colorful-select dropdown-primary" placeholder="请选择学期"></mdb-select>
             <label class="font-weight-bold blue-text">学期</label>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="colorSelect" class="colorful-select dropdown-primary" placeholder="请选择教材版本"></mdb-select>
+            <mdb-select [options]="teachTargetSelect" class="colorful-select dropdown-primary" placeholder="请选择教材版本"></mdb-select>
             <label class="font-weight-bold blue-text">教材版本</label>
           </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="col-md-9">
           <div class=" row md-form   form-group ">
             <label for="mydateId" class="font-weight-bold blue-text">课程截至日期</label>
-            <mdb-date-picker id="mydateId" name="mydate" [options]="myDatePickerOptions" [placeholder]="'请选择截止日期'" [(ngModel)]="model"
+            <mdb-date-picker id="mydateId" name="mydate" [options]="myDatePickerOptions" [placeholder]="'请选择截止日期'" formControlName="endTime"
               required></mdb-date-picker>
 
             <!-- 
