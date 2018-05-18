@@ -12,12 +12,12 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { MDBSpinningPreloader } from './typescripts/pro/index';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
-import { NewTaskComponent } from './teacher/new-task/new-task.component';
+import { NewCourseComponent } from './teacher/new-course/new-course.component';
 import { NavbarComponent } from './navbar.component';
 import { TaskListComponent } from './teacher/task-list/task-list.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { routing } from './app.routing.module';
-import { TaskService } from './services/task.service';
+import { CourseService } from './services/course.service';
 import { LoginComponent } from './home/login/login.component';
 import { HomeComponent } from './home/home/home.component';
 import { LatestResourcesComponent } from './home/latest-resources/latest-resources.component';
@@ -28,7 +28,7 @@ import { TreeModule } from 'angular-tree-component';
   declarations: [
     AppComponent,
     TeacherFormComponent,
-    NewTaskComponent,
+    NewCourseComponent,
     NavbarComponent,
     TaskListComponent,
     ViewClassStudentComponent,
@@ -55,7 +55,7 @@ import { TreeModule } from 'angular-tree-component';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, TaskService, MessageService],
+  providers: [MDBSpinningPreloader, CourseService, MessageService],
   bootstrap: [AppComponent],
   schemas:      [ NO_ERRORS_SCHEMA ]
 })

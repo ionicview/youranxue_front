@@ -1,5 +1,5 @@
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
-import { NewTaskComponent } from './teacher/new-task/new-task.component';
+import { NewCourseComponent } from './teacher/new-course/new-course.component';
 
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from './home/login/login.component';
@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'all-resources', component: AllResourcesComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'new-task', component: NewTaskComponent },
+    { path: 'new-course', component: NewCourseComponent },
     { path: 'task-list', component: TaskListComponent },
     { path: 'view-class-student', component: ViewClassStudentComponent }
 

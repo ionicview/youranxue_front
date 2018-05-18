@@ -2,51 +2,49 @@
 <div class="card  mb-3">
   <h3 class="card-header primary-color white-text">添加新课程</h3>
   <div class="card-body">
-    <form [formGroup]="myForm" (ngSubmit)="doPost(myForm.value)">
+    <form [formGroup]="myForm" (ngSubmit)="createNewCourse(myForm.value)">
       <div class="container">
         <div class="col-md-9">
           <div class=" row md-form   form-group ">
-            <input type="text" id="className" data-error="  " data-success=" " minLength="1" class="form-control" formControlName="className"
-              mdbInputDirective>
-            <label for="className" class="font-weight-bold blue-text">课程名称</label>
+            <input type="text" id="courseName" data-error="  " data-success=" " placeholder="请输入课程名称" class="form-control" formControlName="courseName" mdbInputDirective>
+            <label for="courseName"  class="font-weight-bold blue-text">课程名称</label>
           </div>
         </div>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="subjectSelect"  class="colorful-select dropdown-primary" placeholder="请选择学科"></mdb-select>
+            <mdb-select [options]="subjectSelect" class="colorful-select dropdown-primary" formControlName="subjectId" placeholder="请选择学科"></mdb-select>
             <label class="font-weight-bold blue-text">学科</label>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="teachTargetSelect"  class="colorful-select dropdown-primary" placeholder="请选择授课对象"></mdb-select>
+            <mdb-select [options]="gradeSelect" class="colorful-select dropdown-primary" formControlName="gradeId" placeholder="请选择授课对象"></mdb-select>
             <label class="font-weight-bold blue-text">授课对象</label>
           </div>
           <div class="col-md-3">
-            <mdb-select [options]="termSelect" class="colorful-select dropdown-primary" placeholder="请选择学期"></mdb-select>
+            <mdb-select [options]="semesterSelect" class="colorful-select dropdown-primary" formControlName="semesterId" placeholder="请选择学期"></mdb-select>
             <label class="font-weight-bold blue-text">学期</label>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-md-3">
-            <mdb-select [options]="teachTargetSelect" class="colorful-select dropdown-primary" placeholder="请选择教材版本"></mdb-select>
+            <mdb-select [options]="publisherSelect" class="colorful-select dropdown-primary" formControlName="publisherId" placeholder="请选择教材版本"></mdb-select>
             <label class="font-weight-bold blue-text">教材版本</label>
           </div>
         </div>
         <div class="col-md-2">
           <div class=" row md-form   form-group ">
-            <input type="text" id="className" data-error="  " data-success=" " minLength="1" class="form-control" formControlName="className"
+            <input type="text" id="studentCount" data-error="  " data-success=" " placeholder="请输入课程参加人数" minLength="1" class="form-control" formControlName="studentCount"
               mdbInputDirective>
-            <label for="className" class="font-weight-bold blue-text">人数</label>
+            <label for="studentCount" class="font-weight-bold blue-text">人数</label>
           </div>
         </div>
         <div class="col-md-9">
           <div class=" row md-form   form-group ">
-            <label for="mydateId" class="font-weight-bold blue-text">课程截至日期</label>
-            <mdb-date-picker id="mydateId" name="mydate" [options]="myDatePickerOptions" [placeholder]="'请选择截止日期'" formControlName="endTime"
-              required></mdb-date-picker>
+            <label for="endDate" class="font-weight-bold blue-text">课程截至日期</label>
+            <mdb-date-picker id="endDate" name="endDate" [options]="myDatePickerOptions" [placeholder]="'请选择截止日期'" formControlName="endDate"></mdb-date-picker>
 
             <!-- 
             <input type="text" id="className" data-error="  " data-success=" " minLength="1" class="form-control" formControlName="className"
@@ -55,7 +53,7 @@
 
           </div>
         </div>
-      </div>
+ 
 
       <!-- </div> -->
       <!-- <div class="md-form form-sm  form-group">
@@ -71,10 +69,11 @@
 
       <br>
       <br>
-      <button class="btn btn-primary waves-light" mdbRippleRadius [disabled]="!myForm.valid">
+      <button type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
         <i class="fa fa-check mr-1"></i>&nbsp;提交申请</button>
-      <button class="btn btn-default waves-light" mdbWavesEffect>
+      <button type="button" (click)="reset()" class="btn btn-default waves-light"  mdbWavesEffect>
         <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+      </div>
     </form>
   </div>
-</div>
+</div>      

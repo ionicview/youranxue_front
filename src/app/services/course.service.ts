@@ -1,11 +1,12 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NewTask } from '../model/task/newtask';
+import { NewCourse } from '../model/course/new.course';
 import { Observable, of } from 'rxjs';
-import { catchError, tap} from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
-import { InitNewTask } from '../model/task/initNewTask';
+import { InitNewCourse } from '../model/course/init.new.course';
+import { CourseViewVo } from '../model/course/course.view.vo';
 const API_URL = environment.apiUrl;
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,26 +15,28 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class CourseService {
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  doPost(newtask: NewTask): Observable<NewTask> {
-    alert("In task service");
-    //return this.http.post<NewTask>('http://localhost:8080/public', newtask, httpOptions).pipe(
-    return this.http.post<NewTask>(`${API_URL}/task`, newtask, httpOptions).pipe(
-      tap((newtask: NewTask) => this.log(`added task w/ id=${newtask.id}`)),
-      catchError(this.handleError<NewTask>('addHero'))
+  createNewCourse(newCourse: NewCourse): Observable<NewCourse> {
+    alert("In course service");
+    //return this.http.post<newCourse>('http://localhost:8080/public', newCourse, httpOptions).pipe(
+    return this.http.put<NewCourse>(`${API_URL}/course/newCourse`, newCourse, httpOptions).pipe(
+      tap((insertCount) => this.log(`added course w/ count=${insertCount}`)),
+      catchError(this.handleError<NewCourse>('new course'))
     );
   }
 
-  initNewTask(): Observable<InitNewTask> {
-    return this.http.get<InitNewTask>(`${API_URL}/task/initNewTask`);
-
+  initNewCourse(): Observable<InitNewCourse> {
+    return this.http.get<InitNewCourse>(`${API_URL}/course/initNewCourse`);
 
   }
 
+  getAllCourseList(): Observable<CourseViewVo[]> {
+    return this.http.get<CourseViewVo[]>(`${API_URL}/course/getAllCourse`);
+  }
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
