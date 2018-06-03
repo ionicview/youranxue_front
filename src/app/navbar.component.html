@@ -8,7 +8,7 @@
       <li>
         <div class="logo-wrapper waves-light">
           <a href="#">
-              <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
             <!-- <img src="img/youranxue.png" /> -->
 
           </a>
@@ -51,22 +51,33 @@
             <!-- Collapsible link -->
             <mdb-item>
               <mdb-item-head mdbRippleRadius>
-                <i class="fa fa-chevron-right"></i>学习任务</mdb-item-head>
+                <i class="fa fa-chevron-right"></i>课程管理</mdb-item-head>
               <mdb-item-body>
                 <ul>
-                  <li routerLinkActive="active">
-                    <a routerLink="/new-course" class="waves-effect" mdbRippleRadius>新建学习任务</a>
-                  </li>
-                  <li routerLinkActive="active">
-                    <a routerLink="/view-class-student" class="waves-effect" mdbRippleRadius>查看学习任务</a>
-                  </li>
                   <li>
-                    <a routerLink="/task-list" class="waves-effect" mdbRippleRadius>课程列表</a>
+                    <a routerLink="/course-list" class="waves-effect" mdbRippleRadius>课程列表</a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/new-course" class="waves-effect" mdbRippleRadius>新建课程</a>
                   </li>
                 </ul>
               </mdb-item-body>
             </mdb-item>
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-chevron-right"></i>学习任务</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a routerLink="/task-list" class="waves-effect" mdbRippleRadius>任务列表</a>
+                  </li>
 
+                  <li routerLinkActive="active">
+                    <a routerLink="/view-class-student" class="waves-effect" mdbRippleRadius>查看学习任务</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
             <!-- Simple link -->
             <mdb-item class="no-collase">
               <mdb-item-head mdbRippleRadius>

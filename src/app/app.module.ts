@@ -14,7 +14,7 @@ import { MDBSpinningPreloader } from './typescripts/pro/index';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
 import { NavbarComponent } from './navbar.component';
-import { TaskListComponent } from './teacher/task-list/task-list.component';
+import { CourseListComponent } from './teacher/course-list/course-list.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { routing } from './app.routing.module';
 import { CourseService } from './services/course.service';
@@ -24,19 +24,24 @@ import { LatestResourcesComponent } from './home/latest-resources/latest-resourc
 import { HeaderComponent } from './home/header/header.component';
 import { AllResourcesComponent } from './home/all-resources/all-resources.component';
 import { TreeModule } from 'angular-tree-component';
+import {TransCourseStatus} from './model/enum/trans.course.status';
+import { NewTestComponent } from './teacher/new-test/new-test.component';
+import { TestService } from './services/test.service';
 @NgModule({
   declarations: [
     AppComponent,
     TeacherFormComponent,
     NewCourseComponent,
     NavbarComponent,
-    TaskListComponent,
+    CourseListComponent,
     ViewClassStudentComponent,
     LoginComponent,
     HomeComponent,
     LatestResourcesComponent,
     HeaderComponent,
-    AllResourcesComponent
+    AllResourcesComponent,
+    TransCourseStatus,
+    NewTestComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ import { TreeModule } from 'angular-tree-component';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, MessageService],
+  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService],
   bootstrap: [AppComponent],
   schemas:      [ NO_ERRORS_SCHEMA ]
 })

@@ -5,7 +5,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from './home/login/login.component';
 import { HomeComponent } from './home/home/home.component';
 import { AllResourcesComponent } from './home/all-resources/all-resources.component';
-import { TaskListComponent } from './teacher/task-list/task-list.component';
+import { CourseListComponent } from './teacher/course-list/course-list.component';
+import { NewTestComponent } from './teacher/new-test/new-test.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,9 +14,9 @@ const routes: Routes = [
     { path: 'all-resources', component: AllResourcesComponent },
     { path: 'login', component: LoginComponent },
     { path: 'new-course', component: NewCourseComponent },
-    { path: 'task-list', component: TaskListComponent },
+    { path: 'course-list', component: CourseListComponent },
+    { path: 'new-test', component: NewTestComponent },
     { path: 'view-class-student', component: ViewClassStudentComponent }
-
 
 ];
 

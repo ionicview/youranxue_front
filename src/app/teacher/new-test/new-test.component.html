@@ -1,0 +1,64 @@
+<!--Panel-->
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">新建学习任务</h3>
+  <div class="card-body">
+    <form [formGroup]="myForm" (ngSubmit)="createNewTest(myForm.value)">
+      <div class="container">
+        <div class="col-md-9">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="taskName" data-error="  " data-success=" " placeholder="请输入任务名称" class="form-control" formControlName="testName"
+              mdbInputDirective>
+            <label for="taskName" class="font-weight-bold blue-text">任务名称</label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <mdb-select [options]="chapterSelect" class="colorful-select dropdown-primary" formControlName="chapterId" placeholder="请选择对应章"
+              (selected)="onChpaterChange($event.value)"></mdb-select>
+            <label class="font-weight-bold blue-text">对应章节</label>
+          </div>
+          <div class="col-md-3">
+            <mdb-select [options]="sectionSelect" class="colorful-select dropdown-primary" formControlName="sectionId" placeholder="请选择节"></mdb-select>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-9 row">
+          <div class="md-form   form-group ">
+            <input type="text" id="useHour" data-error="  " data-success=" " placeholder="小时" class="form-control" formControlName="useHour"
+              mdbInputDirective>
+            <label for="useHour" class="font-weight-bold blue-text">所用时长(小时)</label>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="md-form   form-group ">
+            <input type="text" id="useMin" data-error="  " data-success=" " placeholder="分钟" class="form-control" formControlName="useMin"
+              mdbInputDirective>
+            <label for="useMin" class="font-weight-bold blue-text">所用时长(分钟)</label>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="totalScore" data-error="  " data-success=" " placeholder="请输入总分数" class="form-control" formControlName="totalScore"
+              mdbInputDirective>
+            <label for="totalScore" class="font-weight-bold blue-text">总分数</label>
+          </div>
+        </div>
+        <br>
+        <!-- <div class="switch">
+          <label class="font-weight-bold blue-text">学生评价开关</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label >
+            OFF
+            <input type="checkbox">
+            <span class="lever"></span>
+            ON
+          </label>
+        </div> -->
+
+        <br>
+        <button type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
+          <i class="fa fa-check mr-1"></i>&nbsp;确定</button>
+        <button type="button" (click)="reset()" class="btn btn-default waves-light" mdbWavesEffect>
+          <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+      </div>
+    </form>
+  </div>
+</div>
