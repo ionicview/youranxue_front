@@ -27,6 +27,11 @@ import { TreeModule } from 'angular-tree-component';
 import {TransCourseStatus} from './model/enum/trans.course.status';
 import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestService } from './services/test.service';
+import { TestListComponent } from './teacher/test-list/test-list.component';
+import { TestQuestionEditComponent } from './teacher/test-question-edit/test-question-edit.component';
+import { SampleComponent } from './example/sample/sample.component';
+import { BookService } from './services/book/book.service';
+import { TreeviewModule } from 'ngx-treeview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +46,10 @@ import { TestService } from './services/test.service';
     HeaderComponent,
     AllResourcesComponent,
     TransCourseStatus,
-    NewTestComponent
+    NewTestComponent,
+    TestListComponent,
+    TestQuestionEditComponent,
+    SampleComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +60,7 @@ import { TestService } from './services/test.service';
     HttpClientModule,
     TreeModule,
     routing,
+    TreeviewModule.forRoot(),
     ToastModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     MDBBootstrapModulePro.forRoot(),
@@ -60,7 +69,7 @@ import { TestService } from './services/test.service';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService],
+  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService,BookService],
   bootstrap: [AppComponent],
   schemas:      [ NO_ERRORS_SCHEMA ]
 })

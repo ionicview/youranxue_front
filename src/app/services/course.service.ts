@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 import { InitNewCourse } from '../model/course/init.new.course';
-import { CourseViewVo } from '../model/course/course.view.vo';
+import { CourseViewVO} from '../model/course/course.view.vo';
 const API_URL = environment.apiUrl;
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -34,8 +34,8 @@ export class CourseService {
 
   }
 
-  getAllCourseList(): Observable<CourseViewVo[]> {
-    return this.http.get<CourseViewVo[]>(`${API_URL}/course/getAllCourse`);
+  getAllCourseList(): Observable<CourseViewVO[]> {
+    return this.http.get<CourseViewVO[]>(`${API_URL}/course/getAllCourse`);
   }
 
   /** Log a HeroService message with the MessageService */
