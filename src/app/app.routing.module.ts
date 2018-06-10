@@ -10,6 +10,7 @@ import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestListComponent } from './teacher/test-list/test-list.component';
 import { TestQuestionEditComponent } from './teacher/test-question-edit/test-question-edit.component';
 import { SampleComponent } from './example/sample/sample.component';
+import { ChartsTestComponent } from './charts-test/charts-test.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,7 +23,8 @@ const routes: Routes = [
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
-    { path: 'view-class-student', component: ViewClassStudentComponent }
+    { path: 'view-class-student', component: ViewClassStudentComponent },
+    { path: 'charts-test', component: ChartsTestComponent }
 
 ];
 
