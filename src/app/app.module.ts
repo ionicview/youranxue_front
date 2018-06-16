@@ -35,6 +35,7 @@ import { TreeviewModule } from 'ngx-treeview';
 import { ChartsTestComponent } from './charts-test/charts-test.component';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.component';
+import { NewResourceComponent } from './resources/new-resource/new-resource.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,8 @@ import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.com
     ChartsTestComponent,
     RadarChartComponent,
     PolarAreaChartComponent
+    NewResourceComponent
+    master
   ],
   imports: [
     BrowserModule,
