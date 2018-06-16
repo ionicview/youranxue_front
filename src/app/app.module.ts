@@ -32,6 +32,7 @@ import { TestQuestionEditComponent } from './teacher/test-question-edit/test-que
 import { SampleComponent } from './example/sample/sample.component';
 import { BookService } from './services/book/book.service';
 import { TreeviewModule } from 'ngx-treeview';
+import { NewResourceComponent } from './resources/new-resource/new-resource.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { TreeviewModule } from 'ngx-treeview';
     NewTestComponent,
     TestListComponent,
     TestQuestionEditComponent,
-    SampleComponent
+    SampleComponent,
+    NewResourceComponent
   ],
   imports: [
     BrowserModule,
