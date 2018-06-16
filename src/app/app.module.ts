@@ -24,7 +24,7 @@ import { LatestResourcesComponent } from './home/latest-resources/latest-resourc
 import { HeaderComponent } from './home/header/header.component';
 import { AllResourcesComponent } from './home/all-resources/all-resources.component';
 import { TreeModule } from 'angular-tree-component';
-import {TransCourseStatus} from './model/enum/trans.course.status';
+import { TransCourseStatus } from './model/enum/trans.course.status';
 import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestService } from './services/test.service';
 import { TestListComponent } from './teacher/test-list/test-list.component';
@@ -56,9 +56,8 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
     SampleComponent,
     ChartsTestComponent,
     RadarChartComponent,
-    PolarAreaChartComponent
+    PolarAreaChartComponent,
     NewResourceComponent
-    master
   ],
   imports: [
     BrowserModule,
@@ -78,8 +77,8 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService,BookService],
+  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService],
   bootstrap: [AppComponent],
-  schemas:      [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
