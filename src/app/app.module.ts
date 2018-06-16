@@ -32,6 +32,9 @@ import { TestQuestionEditComponent } from './teacher/test-question-edit/test-que
 import { SampleComponent } from './example/sample/sample.component';
 import { BookService } from './services/book/book.service';
 import { TreeviewModule } from 'ngx-treeview';
+import { ChartsTestComponent } from './charts-test/charts-test.component';
+import { RadarChartComponent } from './radar-chart/radar-chart.component';
+import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.component';
 import { NewResourceComponent } from './resources/new-resource/new-resource.component';
 @NgModule({
   declarations: [
@@ -51,7 +54,11 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
     TestListComponent,
     TestQuestionEditComponent,
     SampleComponent,
+    ChartsTestComponent,
+    RadarChartComponent,
+    PolarAreaChartComponent
     NewResourceComponent
+    master
   ],
   imports: [
     BrowserModule,
