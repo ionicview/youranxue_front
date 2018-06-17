@@ -5,7 +5,7 @@ import { NewTest } from '../../model/test/new.test';
 
 
 @Component({
-  selector: 'app-new-test',
+  selector: 'mdb-app-new-test',
   templateUrl: './new-test.component.html',
   styleUrls: ['./new-test.component.scss']
 })
@@ -55,7 +55,7 @@ export class NewTestComponent implements OnInit {
     //   { value: '3', label: '化学2' },
     // ];
 
-    //this.chapterSectionMap = new Map<string, Array<any>();
+    // this.chapterSectionMap = new Map<string, Array<any>();this.chapterSectionMap = new Map<string, Array<any>();
 
 
   }
@@ -71,7 +71,7 @@ export class NewTestComponent implements OnInit {
 
   createNewTest(newTest: NewTest): void {
     this.testServcie.createNewTest(newTest).subscribe(() => {
-      console.log("Return");
+      console.log('Return');
     });
   }
 

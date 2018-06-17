@@ -1,7 +1,7 @@
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
 
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './home/login/login.component';
 import { HomeComponent } from './home/home/home.component';
 import { AllResourcesComponent } from './home/all-resources/all-resources.component';
@@ -10,7 +10,9 @@ import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestListComponent } from './teacher/test-list/test-list.component';
 import { TestQuestionEditComponent } from './teacher/test-question-edit/test-question-edit.component';
 import { SampleComponent } from './example/sample/sample.component';
-import { ChartsTestComponent } from './charts-test/charts-test.component';
+import { RadarChartComponent } from 'app/charts/radar-chart/radar-chart.component';
+import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
+import { ChartsTestComponent } from './charts/charts-test/charts-test.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +26,8 @@ const routes: Routes = [
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
     { path: 'view-class-student', component: ViewClassStudentComponent },
+    { path: 'radar-chart', component: RadarChartComponent },
+    { path: 'polar-area-chart', component: PolarAreaChartComponent },
     { path: 'charts-test', component: ChartsTestComponent }
 
 ];
