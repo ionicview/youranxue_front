@@ -3,7 +3,7 @@ import { TestViewVO } from '../../model/test/test.view.vo';
 import { TestService } from '../../services/test.service';
 
 @Component({
-  selector: 'app-test-list',
+  selector: 'mdb-app-test-list',
   templateUrl: './test-list.component.html',
   styleUrls: ['./test-list.component.scss']
 })
