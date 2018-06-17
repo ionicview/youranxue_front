@@ -14,13 +14,15 @@ export class TestQuestionEditComponent implements OnInit {
   questionNumberList: Array<QuestionNumberVO>;
 
   items: TreeviewItem[];
-  values: number[];
+  selectedSectionIds: number[];
+  selectedSectionNames: String[];
+
   config = TreeviewConfig.create({
     hasAllCheckBox: true,
     hasFilter: true,
     hasCollapseExpand: true,
     decoupleChildFromParent: false,
-    maxHeight: 400
+    maxHeight: 800
   });
 
   constructor(private fb: FormBuilder, private service: BookService) {
@@ -34,5 +36,11 @@ export class TestQuestionEditComponent implements OnInit {
   }
   onFilterChange(value: string) {
     console.log('filter:', value);
-}
+  }
+
+  onSelectedChange(event:number[]){
+    this.selectedSectionIds = event;
+    
+  }
+
 }

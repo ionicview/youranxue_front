@@ -1,4 +1,7 @@
 <div class="row">人教版 八年级 数学 第三章 第四小节</div>
+<div class="alert alert-success" role="alert">
+  Selected books: {{selectedSectionIds}}
+</div>
 <hr>
 <div class="row">
     <div class="col-lg-4 col-sm-12">
@@ -6,7 +9,8 @@
           <label>
             <strong>ngx-treeview</strong>
           </label>
-          <ngx-treeview [config]="config" [items]="items" (filterChange)="onFilterChange($event)" (selectedChange)="values = $event">
+          <!-- <ngx-treeview [config]="config" [items]="items" (filterChange)="onFilterChange($event)" (selectedChange)="selectedSectionIds = $event"> -->
+          <ngx-treeview [config]="config" [items]="items" (filterChange)="onFilterChange($event)" (selectedChange)="onSelectedChange($event)">
           </ngx-treeview>
         </div>
       </div>
@@ -43,7 +47,7 @@
               <td>
                 <!-- <input type="text" id="taskName" data-error="  " data-success=" " placeholder="请输入任务名称" class="form-control" formControlName="testName"
                   mdbInputDirective> -->
-                  <input type="text" id="taskName" data-error="  " data-success=" " placeholder="请输入任务名称"   mdbInputDirective>
+                  <input type="text"  data-error="  " data-success=" " placeholder="请输入任务名称"   mdbInputDirective>
               </td>
             </tr>
           </tbody>

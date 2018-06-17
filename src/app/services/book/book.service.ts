@@ -9,45 +9,21 @@ export class BookService {
   constructor() { }
 
   getBooks(): TreeviewItem[] {
-    const childrenCategory = new TreeviewItem({
-        text: 'Children', value: 1, collapsed: true, children: [
-            { text: 'Baby 3-5', value: 11 },
-            { text: 'Baby 6-8', value: 12 },
-            { text: 'Baby 9-12', value: 13 }
+    const chapter11 = new TreeviewItem({
+        text: '第十一章 一次函数', value: 1, collapsed: true, children: [
+            { text: '11．1 变量与函数', value: 1001 },
+            { text: '11．2 一次函数', value: 1002 },
+            { text: '11．3 用函数观点看方程（组）与不等式', value: 1003 }
         ]
     });
-    const itCategory = new TreeviewItem({
-        text: 'IT', value: 9, children: [
-            {
-                text: 'Programming', value: 91, children: [{
-                    text: 'Frontend', value: 911, children: [
-                        { text: 'Angular 1', value: 9111 },
-                        { text: 'Angular 2', value: 9112 },
-                        { text: 'ReactJS', value: 9113, disabled: true }
-                    ]
-                }, {
-                    text: 'Backend', value: 912, children: [
-                        { text: 'C#', value: 9121 },
-                        { text: 'Java', value: 9122 },
-                        { text: 'Python', value: 9123, checked: false, disabled: true }
-                    ]
-                }]
-            },
-            {
-                text: 'Networking', value: 92, children: [
-                    { text: 'Internet', value: 921 },
-                    { text: 'Security', value: 922 }
-                ]
-            }
+    const chapter12 = new TreeviewItem({
+        text: '第十二章 数据的描述 ', value: 2, collapsed: true, children: [
+            { text: '12．1 几种常见的统计图表', value: 2001 },
+            { text: '12．2 用图表描述数据', value: 2002 },
+            { text: '12．3 课题学习 从数据谈节水', value: 2003 }
         ]
     });
-    const teenCategory = new TreeviewItem({
-        text: 'Teen', value: 2, collapsed: true, disabled: true, children: [
-            { text: 'Adventure', value: 21 },
-            { text: 'Science', value: 22 }
-        ]
-    });
-    const othersCategory = new TreeviewItem({ text: 'Others', value: 3, checked: false, disabled: true });
-    return [childrenCategory, itCategory, teenCategory, othersCategory];
+
+    return [chapter11, chapter12];
 }
 }
