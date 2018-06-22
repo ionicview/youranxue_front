@@ -1,4 +1,4 @@
-import { CourseViewVo } from './../../model/course/course.view.vo';
+import { CourseViewVO } from './../../model/course/course.view.vo';
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 
@@ -9,12 +9,12 @@ import { CourseService } from '../../services/course.service';
 })
 export class CourseListComponent implements OnInit {
 
-  courseList: Array<CourseViewVo>;
+  courseList: Array<CourseViewVO>;
   constructor(private courseService: CourseService) { }
 
   ngOnInit() {
 
-    this.courseService.getAllCourseList().subscribe((courses: Array<CourseViewVo>) => {
+    this.courseService.getAllCourseList().subscribe((courses: Array<CourseViewVO>) => {
       this.courseList = courses;
 
     });

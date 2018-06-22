@@ -1,16 +1,12 @@
-import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { BaseService } from './base.service';
 import { MessageService } from './message.service';
 import { NewTest } from '../model/test/new.test';
+import { TestViewVO } from '../model/test/test.view.vo';
 
-const API_URL = environment.apiUrl;
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -22,21 +18,26 @@ export class TestService extends BaseService {
   }
 
   initNewTest(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(`${API_URL}/test/initNewTest/1001`);
+    return this.http.get<Array<any>>(`${this.API_URL}/test/initNewTest/1001`);
 
   }
 
   getSectionSelect(chapterId: number): Observable<Array<any>> {
-    return this.http.get<Array<any>>(`${API_URL}/test/getSectionSelect/${chapterId}`);
+    return this.http.get<Array<any>>(`${this.API_URL}/test/getSectionSelect/${chapterId}`);
   }
 
   createNewTest(newTest: NewTest): Observable<NewTest> {
     alert("In test service");
-    //return this.http.post<newTest>('http://localhost:8080/public', newTest, httpOptions).pipe(
-    return this.http.put<NewTest>(`${API_URL}/test/newTest`, newTest, httpOptions).pipe(
+    return this.http.put<NewTest>(`${this.API_URL}/test/newTest`, newTest, this.httpOptions).pipe(
       tap((insertCount) => this.log(`added course w/ count=${insertCount}`)),
       catchError(this.handleError<NewTest>('new test'))
     );
   }
+
+  getAllTestByBookId(bookId: number): Observable<TestViewVO[]> {
+    return this.http.get<TestViewVO[]>(`${this.API_URL}/test/getAllTestByBookId/${bookId}`);
+  }
+
+
 
 }

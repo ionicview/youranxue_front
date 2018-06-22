@@ -24,9 +24,18 @@ import { LatestResourcesComponent } from './home/latest-resources/latest-resourc
 import { HeaderComponent } from './home/header/header.component';
 import { AllResourcesComponent } from './home/all-resources/all-resources.component';
 import { TreeModule } from 'angular-tree-component';
-import {TransCourseStatus} from './model/enum/trans.course.status';
+import { TransCourseStatus } from './model/enum/trans.course.status';
 import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestService } from './services/test.service';
+import { TestListComponent } from './teacher/test-list/test-list.component';
+import { TestQuestionEditComponent } from './teacher/test-question-edit/test-question-edit.component';
+import { SampleComponent } from './example/sample/sample.component';
+import { BookService } from './services/book/book.service';
+import { TreeviewModule } from 'ngx-treeview';
+import { ChartsTestComponent } from './charts-test/charts-test.component';
+import { RadarChartComponent } from './radar-chart/radar-chart.component';
+import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.component';
+import { NewResourceComponent } from './resources/new-resource/new-resource.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +50,14 @@ import { TestService } from './services/test.service';
     HeaderComponent,
     AllResourcesComponent,
     TransCourseStatus,
-    NewTestComponent
+    NewTestComponent,
+    TestListComponent,
+    TestQuestionEditComponent,
+    SampleComponent,
+    ChartsTestComponent,
+    RadarChartComponent,
+    PolarAreaChartComponent,
+    NewResourceComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +68,7 @@ import { TestService } from './services/test.service';
     HttpClientModule,
     TreeModule,
     routing,
+    TreeviewModule.forRoot(),
     ToastModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     MDBBootstrapModulePro.forRoot(),
@@ -60,8 +77,8 @@ import { TestService } from './services/test.service';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService],
+  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService],
   bootstrap: [AppComponent],
-  schemas:      [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
