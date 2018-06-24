@@ -31,5 +31,4 @@ const routes: Routes = [
     { path: 'charts-test', component: ChartsTestComponent }
 
 ];
-
 export const routing = RouterModule.forRoot(routes);
