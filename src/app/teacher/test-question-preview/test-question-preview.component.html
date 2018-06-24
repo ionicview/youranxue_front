@@ -1,7 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>
+  Welcome to <a target="_blank" [href]="url">{{title}}</a> demo app!
+</h1>
 
+<div class="container">
+  <h2>Equation: </h2>
+  <p>Type here your equation:</p>
+  <p><input type="text" [(ngModel)]="equation"></p>
+  <p><ng-katex [equation]="equation" [options]="options"></ng-katex></p>
 
-  <div class="math-element" id="equation" >
-    {{equationTexString}}
-    </div>
+  <h2>Paragraph: </h2>
+  <p>In progress <a target="_blank" href="https://github.com/garciparedes/ng-katex/issues/22">here</a>.</p>
+</div>
 
- <img [src]="testImg">
+<img [src]="testImg">

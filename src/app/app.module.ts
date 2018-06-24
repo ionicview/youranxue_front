@@ -37,6 +37,7 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
 import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
+import { KatexModule } from 'ng-katex';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { RadarChartComponent } from './charts/radar-chart/radar-chart.component'
     HttpClientModule,
     TreeModule,
     routing,
+    KatexModule,
     TreeviewModule.forRoot(),
     ToastModule.forRoot(),
     MDBBootstrapModule.forRoot(),
