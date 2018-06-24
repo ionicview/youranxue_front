@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radar-chart.component.scss']
 })
 export class RadarChartComponent implements OnInit {
+
   public chartType = 'radar';
+  public radar = 'radar';
 
   public chartDatasets: Array<any> = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
@@ -40,14 +42,11 @@ export class RadarChartComponent implements OnInit {
     responsive: true
   };
 
-  // public chartClicked(e: any): void {
-  // }
-
-  // public chartHovered(e: any): void {
-  // }
-
+  public chartClicked(e: any): void {
+    console.log(e);
+    console.log(e.active);
+  }
   constructor() { }
-
   ngOnInit() {
   }
 
