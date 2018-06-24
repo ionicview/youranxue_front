@@ -3,22 +3,18 @@
 
   <!-- Sidebar navigation -->
   <mdb-sidenav #sidenav class="sn-bg-1 fixed" [fixed]="true">
-
     <logo>
       <li>
         <div class="logo-wrapper waves-light">
           <a href="#">
             <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center">
             <!-- <img src="img/youranxue.png" /> -->
-
           </a>
         </div>
       </li>
       <!--/. Logo -->
     </logo>
-
     <links>
-
       <!--Search Form
       <li>
         <form class="search-form" role="search">
@@ -28,7 +24,6 @@
         </form>
       </li>
       /.Search Form-->
-
       <!-- Side navigation links -->
       <li>
         <ul class="collapsible collapsible-accordion">
@@ -79,7 +74,7 @@
                   </li>
 
                   <li>
-                    <a routerLink="/test-list" class="waves-effect" mdbRippleRadius>任务列表</a>
+                    <a routerLink="/task-list" class="waves-effect" mdbRippleRadius>任务列表</a>
                   </li>
 
                   <li routerLinkActive="active">
@@ -106,6 +101,21 @@
                   </li>
                   <li>
                     <a href="#" class="waves-effect" mdbRippleRadius>八年级数学上册</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
+            <!-- Collapsible link -->
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-bar-chart"></i> 各种图表</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a href="/radar-chart" class="waves-effect" mdbRippleRadius>雷达图</a>
+                  </li>
+                  <li>
+                    <a href="/polar-area-chart" class="waves-effect" mdbRippleRadius>极地区域图</a>
                   </li>
                 </ul>
               </mdb-item-body>
@@ -167,6 +177,5 @@
     </navlinks>
   </mdb-navbar>
   <!--/. Navbar -->
-
 </header>
 <!--/.Double navigation-->
