@@ -36,6 +36,7 @@ import { ChartsTestComponent } from './charts-test/charts-test.component';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { PolarAreaChartComponent } from './polar-area-chart/polar-area-chart.component';
 import { NewResourceComponent } from './resources/new-resource/new-resource.component';
+import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +58,8 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
     ChartsTestComponent,
     RadarChartComponent,
     PolarAreaChartComponent,
-    NewResourceComponent
+    NewResourceComponent,
+    TestQuestionPreviewComponent
   ],
   imports: [
     BrowserModule,

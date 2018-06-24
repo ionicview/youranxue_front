@@ -12,6 +12,7 @@ import { TestQuestionEditComponent } from './teacher/test-question-edit/test-que
 import { SampleComponent } from './example/sample/sample.component';
 import { ChartsTestComponent } from './charts-test/charts-test.component';
 import { RadarChartComponent } from './radar-chart/radar-chart.component';
+import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
+    { path: 'test-question-preview', component: TestQuestionPreviewComponent },    
     { path: 'view-class-student', component: ViewClassStudentComponent },
     { path: 'charts-test', component: ChartsTestComponent },
     { path: 'radar-chart', component: RadarChartComponent }
