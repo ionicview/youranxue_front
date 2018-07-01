@@ -1,0 +1,21 @@
+<!--Form without header-->
+<h5 class="card-header primary-color white-text">作业名称</h5>
+<div class="card">
+  <!--Card content-->
+  <div class="card-body">
+    <!--作业名称-->
+    <div class="row">
+      <div class="col-md-9">
+        <tbody *ngFor="let homework of homeworkList">
+            <tr>
+                <td hidden>{{homework.homeworkId}}</td>
+                <td><a href="">{{homework.homeworkName}}</a></td>
+            </tr>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-->  
+
+<!--/Form without header-->

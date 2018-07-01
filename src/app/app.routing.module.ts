@@ -10,6 +10,14 @@ import { NewTestComponent } from './teacher/new-test/new-test.component';
 import { TestListComponent } from './teacher/test-list/test-list.component';
 import { TestQuestionEditComponent } from './teacher/test-question-edit/test-question-edit.component';
 import { SampleComponent } from './example/sample/sample.component';
+import { TeacherListComponent } from './manager/teacher-list/teacher-list.component';
+import { NewTeacherComponent } from './manager/new-teacher/new-teacher.component';
+import { CourseBookListComponent } from './course/courseBook-list/courseBook-list.component';
+import { CourseMainComponent } from './course/courseMain/courseMain.component';
+import { CourseDetailListComponent } from './course/courseDetail-list/courseDetail-list.component';
+import { HomeworkListComponent } from './homework/homework-list/homework-list.component';
+import { HomeworkMainComponent } from './homework/homeworkMain/homeworkMain.component';
+import { HomeworkDetailListComponent } from './homework/homeworkDetail-list/homeworkDetail-list.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +27,14 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'new-course', component: NewCourseComponent },
     { path: 'course-list', component: CourseListComponent },
+    { path: 'new-teacher', component: NewTeacherComponent },
+    { path: 'teacher-list', component: TeacherListComponent },
+    { path: 'courseBook-list', component: CourseBookListComponent },
+    { path: 'courseMain', component: CourseMainComponent },
+    { path: 'courseDetail-list', component: CourseDetailListComponent },
+    { path: 'homework-list', component: HomeworkListComponent },
+    { path: 'homeworkMain', component: HomeworkMainComponent },
+    { path: 'homeworkDetail-list', component: HomeworkDetailListComponent },
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },

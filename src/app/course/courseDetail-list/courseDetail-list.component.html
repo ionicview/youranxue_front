@@ -1,0 +1,49 @@
+
+    <a routerLink="/new-courseDetail" class="btn btn-primary waves-light" mdbRippleRadius>
+            <i class="fa fa-magic mr-1"></i> 删除学生
+    </a>
+    <div style="float:right">课程学生总数56人</div>
+
+  <!--Table-->
+  <table class="table table-sm">
+  
+    <!--Table head-->
+    <thead class="mdb-color darken-0">
+        <tr class="text-white">
+            <th style="width:100px;">
+                <label class="i-checks m-b-none">
+                    <input type="checkbox" ng-model="master" ng-click="all(master,dataList1)"><i></i>
+                </label>
+                全选
+            </th>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>学号</th>
+            <th>学习任务完成率</th>
+            <th>学校试卷完成率</th>
+            <th>题库做题数</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+  
+    <!--Table body-->
+  
+    <tbody *ngFor="let courseDetail of courseDetailList; let myIndex = index">
+        <tr ng-repeat="x in item.listBoxProduct">
+            <td>
+                <div class="form-group">
+                    <input mdbDeepDirective type="checkbox" id="checkbox1">
+                    <label for="checkbox1"></label>
+                </div>
+            </td>
+            <td scope="row">{{myIndex+1}}</td>
+            <td>{{courseDetail.studentId}}</td>
+            <td>{{courseDetail.studentName}}</td>
+            <td>{{courseDetail.learningTaskRate}}</td>
+            <td>{{courseDetail.schoolTestPaperRate}}</td>
+            <td>{{courseDetail.examWorkNumber}}</td>
+        </tr>
+    </tbody>
+    <!--Table body-->
+  </table>
+  <!--Table-->

@@ -1,0 +1,33 @@
+<a routerLink="/new-province" class="btn btn-primary waves-light" mdbRippleRadius>
+
+  <i class="fa fa-magic mr-1"></i> 省添加</a>
+<!--Table-->
+<table class="table table-sm">
+
+  <!--Table head-->
+  <thead class="mdb-color darken-0">
+      <tr class="text-white">
+          <th>No.</th>
+          <th>省ID</th>
+          <th>省名称</th>
+          <th>操作</th>
+      </tr>
+  </thead>
+  <!--Table head-->
+
+  <!--Table body-->
+
+  <tbody *ngFor="let province of provinceList; let myIndex = index">
+      <tr>
+          <th scope="row">{{myIndex+1}}</th>
+          <td>{{province.provinceId}}</td>
+          <td>{{province.provinceName}}</td>
+          <td>
+              <a href="">修改</a>
+              <a href="">删除</a>
+          </td>
+      </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->

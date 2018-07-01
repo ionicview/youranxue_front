@@ -17,7 +17,6 @@ import { NavbarComponent } from './navbar.component';
 import { CourseListComponent } from './teacher/course-list/course-list.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { routing } from './app.routing.module';
-import { CourseService } from './services/course.service';
 import { LoginComponent } from './home/login/login.component';
 import { HomeComponent } from './home/home/home.component';
 import { LatestResourcesComponent } from './home/latest-resources/latest-resources.component';
@@ -32,6 +31,21 @@ import { TestQuestionEditComponent } from './teacher/test-question-edit/test-que
 import { SampleComponent } from './example/sample/sample.component';
 import { BookService } from './services/book/book.service';
 import { TreeviewModule } from 'ngx-treeview';
+import { StudentFormComponent } from './student/student-form/student-form.component';
+import { TeacherListComponent } from './manager/teacher-list/teacher-list.component';
+import { NewTeacherComponent } from './manager/new-teacher/new-teacher.component';
+import { NewProvinceComponent } from './manager/new-province/new-province.component';
+import { NewCityComponent } from './manager/new-city/new-city.component';
+import { ProvinceListComponent } from './manager/province-list/province-list.component';
+import { CityListComponent } from './manager/city-list/city-list.component';
+import { CourseBookListComponent } from './course/courseBook-list/courseBook-list.component';
+import { CourseDetailService } from './services/courseDetail/courseDetail.service';
+import { CourseService } from './services/course/course.service';
+import { CourseDetailListComponent } from './course/courseDetail-list/courseDetail-list.component';
+import { CourseMainComponent } from './course/courseMain/courseMain.component';
+import { HomeworkListComponent } from './homework/homework-list/homework-list.component';
+import { HomeworkDetailListComponent } from './homework/homeworkDetail-list/homeworkDetail-list.component';
+import { HomeworkMainComponent } from './homework/homeworkMain/homeworkMain.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +63,20 @@ import { TreeviewModule } from 'ngx-treeview';
     NewTestComponent,
     TestListComponent,
     TestQuestionEditComponent,
-    SampleComponent
+    SampleComponent,
+    StudentFormComponent,
+    TeacherListComponent,
+    NewTeacherComponent,
+    NewProvinceComponent,
+    NewCityComponent,
+    ProvinceListComponent,
+    CityListComponent,
+    CourseBookListComponent,
+    CourseDetailListComponent,
+    CourseMainComponent,
+    HomeworkListComponent,
+    HomeworkDetailListComponent,
+    HomeworkMainComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +96,7 @@ import { TreeviewModule } from 'ngx-treeview';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService,BookService],
+  providers: [MDBSpinningPreloader, CourseService, TestService,MessageService,BookService,CourseDetailService],
   bootstrap: [AppComponent],
   schemas:      [ NO_ERRORS_SCHEMA ]
 })

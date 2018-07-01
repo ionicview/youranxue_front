@@ -1,0 +1,21 @@
+<!--Form without header-->
+<h5 class="card-header primary-color white-text">课程名称</h5>
+<div class="card">
+  <!--Card content-->
+  <div class="card-body">
+    <!--课程名称-->
+    <div class="row">
+      <div class="col-md-9">
+        <tbody *ngFor="let courseBook of courseBookList">
+            <tr>
+                <td hidden>{{courseBook.courseId}}</td>
+                <td><a href="">{{courseBook.courseName}}</a></td>
+            </tr>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-->  
+
+<!--/Form without header-->

@@ -1,0 +1,68 @@
+<!--Panel-->
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">添加教师</h3>
+  <div class="card-body">
+    <form [formGroup]="myForm" (ngSubmit)="createNewTeacher(myForm.value)">
+      <div class="container">
+        <div class="col-md-3">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="teacherName" data-error="  " data-success=" " placeholder="请输入登陆账号" class="form-control" formControlName="teacherName" mdbInputDirective>
+            <label for="teacherName"  class="font-weight-bold blue-text">教师账号</label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="teacherName" data-error="  " data-success=" " placeholder="请输入登陆账号的初始密码" class="form-control" formControlName="teacherName" mdbInputDirective>
+            <label for="teacherName"  class="font-weight-bold blue-text">登陆密码</label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="teacherName" data-error="  " data-success=" " placeholder="请输入教师名称" class="form-control" formControlName="teacherName" mdbInputDirective>
+            <label for="teacherName"  class="font-weight-bold blue-text">教师名称</label>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class=" row md-form   form-group ">
+            <input type="text" id="teacherName" data-error="  " data-success=" " placeholder="请输入教师的出生年月" class="form-control" formControlName="teacherName" mdbInputDirective>
+            <label for="teacherName"  class="font-weight-bold blue-text">出生年月</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <mdb-select [options]="gradeSelect" class="colorful-select dropdown-primary" formControlName="gradeId" placeholder="请选择教师性别"></mdb-select>
+            <label class="font-weight-bold blue-text">性别</label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <mdb-select [options]="subjectSelect" class="colorful-select dropdown-primary" formControlName="subjectId" placeholder="请选择教师的所在学校"></mdb-select>
+            <label class="font-weight-bold blue-text">所在学校</label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <mdb-select [options]="gradeSelect" class="colorful-select dropdown-primary" formControlName="gradeId" placeholder="请选择教师所授学科"></mdb-select>
+            <label class="font-weight-bold blue-text">所授学科</label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <mdb-select [options]="gradeSelect" class="colorful-select dropdown-primary" formControlName="gradeId" placeholder="请选择教师账户的用户权限"></mdb-select>
+            <label class="font-weight-bold blue-text">用户权限</label>
+          </div>
+        </div>
+        <br>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
+        <i class="fa fa-check mr-1"></i>&nbsp;提交</button>
+      <button type="button" (click)="reset()" class="btn btn-default waves-light"  mdbWavesEffect>
+        <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+      </div>
+    </form>
+  </div>
+</div>      

@@ -1,0 +1,37 @@
+<a routerLink="/new-teacher" class="btn btn-primary waves-light" mdbRippleRadius>
+
+  <i class="fa fa-magic mr-1"></i> 教师添加</a>
+<!--Table-->
+<table class="table table-sm">
+
+  <!--Table head-->
+  <thead class="mdb-color darken-0">
+      <tr class="text-white">
+          <th>No.</th>
+          <th>教师ID</th>
+          <th>教师名称</th>
+          <th>所属学校ID</th>
+          <th>所属学校名称</th>
+          <th>操作</th>
+      </tr>
+  </thead>
+  <!--Table head-->
+
+  <!--Table body-->
+
+  <tbody *ngFor="let teacher of teacherList; let myIndex = index">
+      <tr>
+          <th scope="row">{{myIndex+1}}</th>
+          <td>{{teacher.teacherId}}</td>
+          <td>{{teacher.teacherName}}</td>
+          <td>{{teacher.schoolId}}</td>
+          <td>{{teacher.schoolName}}</td>
+          <td>
+              <a href="">修改</a>
+              <a href="">删除</a>
+          </td>
+      </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
