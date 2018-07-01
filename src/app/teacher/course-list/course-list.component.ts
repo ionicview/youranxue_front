@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 
 @Component({
-  selector: 'app-course-list',
+  selector: 'mdb-app-course-list',
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss']
 })

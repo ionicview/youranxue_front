@@ -19,8 +19,6 @@ export class BaseService {
     this.messageService.add('HeroService: ' + message);
   }
 
-
-
   protected handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

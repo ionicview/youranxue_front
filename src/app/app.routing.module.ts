@@ -26,7 +26,7 @@ const routes: Routes = [
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
-    { path: 'test-question-preview', component: TestQuestionPreviewComponent },    
+    { path: 'test-question-preview/:testId/:testId2', component: TestQuestionPreviewComponent, pathMatch: 'full' },
     { path: 'view-class-student', component: ViewClassStudentComponent },
     { path: 'radar-chart', component: RadarChartComponent },
     { path: 'polar-area-chart', component: PolarAreaChartComponent },

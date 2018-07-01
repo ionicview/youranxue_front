@@ -6,6 +6,7 @@ import { BaseService } from './base.service';
 import { MessageService } from './message.service';
 import { NewTest } from '../model/test/new.test';
 import { TestViewVO } from '../model/test/test.view.vo';
+import { QuestionNumberVO } from '../model/question/question.number.vo';
 
 
 @Injectable({
@@ -27,7 +28,7 @@ export class TestService extends BaseService {
   }
 
   createNewTest(newTest: NewTest): Observable<NewTest> {
-    alert("In test service");
+
     return this.http.put<NewTest>(`${this.API_URL}/test/newTest`, newTest, this.httpOptions).pipe(
       tap((insertCount) => this.log(`added course w/ count=${insertCount}`)),
       catchError(this.handleError<NewTest>('new test'))
@@ -38,6 +39,14 @@ export class TestService extends BaseService {
     return this.http.get<TestViewVO[]>(`${this.API_URL}/test/getAllTestByBookId/${bookId}`);
   }
 
+  questionEditSubmit(testId: number, questionList: QuestionNumberVO[]) {
+
+    return this.http.post<QuestionNumberVO[]>(`${this.API_URL}/test/autoNewTest/${testId}`, questionList, this.httpOptions).pipe(
+        tap((insertCount) => this.log(`added test w/ count=${insertCount}`)),
+        catchError(this.handleError<QuestionNumberVO[]>('new course'))
+    );
+
+}
 
 
 }

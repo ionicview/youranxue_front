@@ -1,11 +1,13 @@
+import { TestService } from './../../services/test.service';
 import { QuestionNumberVO } from './../../model/question/question.number.vo';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from '../../services/book/book.service';
 import { TreeviewItem, TreeviewConfig } from 'ngx-treeview';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-test-question-edit',
+  selector: 'mdb-app-test-question-edit',
   templateUrl: 'test-question-edit.component.html',
   styleUrls: ['./test-question-edit.component.scss']
 })
@@ -27,7 +29,7 @@ export class TestQuestionEditComponent implements OnInit {
     maxHeight: 800
   });
 
-  constructor(private fb: FormBuilder, private service: BookService) {
+  constructor(private fb: FormBuilder, private router: Router, private testService: TestService, private bookService: BookService) {
     this.myForm = this.fb.group({
 
       'questionNumberList': [null, Validators.minLength(3)],
@@ -37,24 +39,24 @@ export class TestQuestionEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookContents = this.service.getContentsByBookId(11);
-    console.debug("in");
+    this.bookContents = this.bookService.getContentsByBookId(11);
+
     this.sectionMap = new Map<number, QuestionNumberVO>();
 
     this.questionNumberList = [];
     this.bookContents.forEach(contents => {
-      var chapterStr = contents.text;
+      const chapterStr = contents.text;
 
       contents.children.forEach(children => {
 
-        var sectionNameWithChapter = chapterStr.concat('：').concat(children.text);
-        //this.sectionMap.set(101, '1001');
-        var sectionQuestion = new QuestionNumberVO(children.value, sectionNameWithChapter, 0);
+        const sectionNameWithChapter = chapterStr.concat(' ： ').concat(children.text);
+        // this.sectionMap.set(101, '1001');
+        const sectionQuestion = new QuestionNumberVO(children.value, sectionNameWithChapter, 0);
 
         this.sectionMap.set(children.value, sectionQuestion);
 
-        //this.questionNumberList.push(sectionQuestion);
-        console.log(children.value + ":" + chapterStr.concat(children.text));
+        // this.questionNumberList.push(sectionQuestion);
+        console.log(children.value + ':' + chapterStr.concat(children.text));
       });
 
     });
@@ -69,7 +71,7 @@ export class TestQuestionEditComponent implements OnInit {
   onSelectedChange(event: number[]) {
     this.selectedSectionIds = event;
     console.debug(event);
-    //初期化选中章节
+    // 初期化选中章节
     this.questionNumberList = [];
 
 
@@ -82,7 +84,7 @@ export class TestQuestionEditComponent implements OnInit {
 
     });
 
-    //从Map中选取选中的章节
+    // 从Map中选取选中的章节
     // this.selectedSectionIds.forEach((sectionId: number) => {
     //   console.log(sectionId);
     //   var questionNumberVO = this.sectionMap.get(sectionId);
@@ -94,8 +96,14 @@ export class TestQuestionEditComponent implements OnInit {
   }
 
   createNewTest() {
-    console.log(this.questionNumberList[0].questionCount);
-    console.log(this.questionNumberList[1].questionCount);
-    console.log(this.questionNumberList[2].questionCount);
+
+    this.testService.questionEditSubmit(1001, this.questionNumberList).subscribe(() => {
+    });
+
+    const testId = 1001;
+    const testId2 = 2002;
+    this.router.navigate(['/test-question-preview', testId, testId2]);
+
   }
+
 }
