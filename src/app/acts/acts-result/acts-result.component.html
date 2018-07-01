@@ -1,0 +1,43 @@
+<div class="row">
+  <b>ACTS-TEST-XXX-TODO</b>
+</div>
+<hr>
+<mdb-app-acts-header></mdb-app-acts-header>
+<hr>
+<div>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>
+          <center>总体成绩[知识]</center>
+        </th>
+        <th>
+          <center>总体成绩[技能]</center>
+        </th>
+        <th>
+          <center>总体成绩[能力]</center>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td *ngFor="let chart of charts; let index = index">
+            <!-- {{chart.category}} -->
+            <mdb-app-radar-chart [chartType]="chartType[index]" [chartDatasets]="chart.chartDatasets">
+            </mdb-app-radar-chart>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mdb-app-acts-grade></mdb-app-acts-grade>
+        </td>
+        <td>
+          <mdb-app-acts-grade></mdb-app-acts-grade>
+        </td>
+        <td>
+          <mdb-app-acts-grade></mdb-app-acts-grade>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -37,6 +37,12 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
 import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
+import { ActsResultComponent } from './acts/acts-result/acts-result.component';
+import { ActsHeaderComponent } from './acts/acts-header/acts-header.component';
+import { ActsChartsComponent } from './acts/acts-charts/acts-charts.component';
+import { ActsGradeComponent } from './acts/acts-grade/acts-grade.component';
+import { ActsResultService } from 'app/services/acts/acts-result.service';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +67,11 @@ import { RadarChartComponent } from './charts/radar-chart/radar-chart.component'
     NewResourceComponent,
     TestQuestionPreviewComponent,
     RadarChartComponent,
-    NewResourceComponent
+    NewResourceComponent,
+    ActsResultComponent,
+    ActsHeaderComponent,
+    ActsChartsComponent,
+    ActsGradeComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +91,10 @@ import { RadarChartComponent } from './charts/radar-chart/radar-chart.component'
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService],
+  providers: [MDBSpinningPreloader, CourseService,
+    TestService, MessageService, BookService, ActsResultComponent,
+    ActsResultService
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
