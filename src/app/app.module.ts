@@ -38,6 +38,8 @@ import { TestQuestionPreviewComponent } from './teacher/test-question-preview/te
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
 import { KatexModule } from 'ng-katex';
+import { MathjaxDirective } from './directive/mathjax.directive';
+import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { KatexModule } from 'ng-katex';
     NewResourceComponent,
     TestQuestionPreviewComponent,
     RadarChartComponent,
-    NewResourceComponent
+    NewResourceComponent,
+    MathjaxDirective,
+    YouKatexComponent
   ],
   imports: [
     BrowserModule,

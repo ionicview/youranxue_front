@@ -1,0 +1,20 @@
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+
+@Directive({
+
+    selector: '[mathJax]'
+})
+export class MathJaxDirective implements OnChanges {
+    @Input() fractionString: string;
+
+    constructor(private el: ElementRef) {
+    }
+
+
+    ngOnChanges() {
+        console.log('>> ngOnChanges');
+        this.el.nativeElement.style.backgroundColor = 'yellow';
+        this.el.nativeElement.innerHTML = this.fractionString;
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.el.nativeElement]);
+    }
+}

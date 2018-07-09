@@ -1,0 +1,9 @@
+<div *ngFor="let txt of latexList; let myIndex = index" class="d-inline-flex">
+
+  <div *ngIf="myIndex % 2 === 0 ; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>&nbsp;&nbsp;{{txt}}&nbsp;&nbsp;</ng-template>
+  <ng-template #elseBlock>
+    <ng-katex [equation]="txt">&nbsp;&nbsp;</ng-katex>
+  </ng-template>
+
+</div>

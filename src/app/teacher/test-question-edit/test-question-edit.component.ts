@@ -101,8 +101,7 @@ export class TestQuestionEditComponent implements OnInit {
     });
 
     const testId = 1001;
-    const testId2 = 2002;
-    this.router.navigate(['/test-question-preview', testId, testId2]);
+    this.router.navigate(['/test-question-preview', testId]);
 
   }
 

@@ -1,3 +1,4 @@
+import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
 
@@ -26,11 +27,12 @@ const routes: Routes = [
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
-    { path: 'test-question-preview/:testId/:testId2', component: TestQuestionPreviewComponent, pathMatch: 'full' },
+    { path: 'test-question-preview/:testId', component: TestQuestionPreviewComponent, pathMatch: 'full' },
     { path: 'view-class-student', component: ViewClassStudentComponent },
     { path: 'radar-chart', component: RadarChartComponent },
     { path: 'polar-area-chart', component: PolarAreaChartComponent },
-    { path: 'charts-test', component: ChartsTestComponent }
+    { path: 'charts-test', component: ChartsTestComponent },
+    { path: 'latex-test', component: YouKatexComponent }
 
 ];
 export const routing = RouterModule.forRoot(routes);

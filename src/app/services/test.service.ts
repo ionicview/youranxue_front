@@ -7,6 +7,7 @@ import { MessageService } from './message.service';
 import { NewTest } from '../model/test/new.test';
 import { TestViewVO } from '../model/test/test.view.vo';
 import { QuestionNumberVO } from '../model/question/question.number.vo';
+import { TestQuestionVO } from '../model/test/test.question.vo';
 
 
 @Injectable({
@@ -42,11 +43,16 @@ export class TestService extends BaseService {
   questionEditSubmit(testId: number, questionList: QuestionNumberVO[]) {
 
     return this.http.post<QuestionNumberVO[]>(`${this.API_URL}/test/autoNewTest/${testId}`, questionList, this.httpOptions).pipe(
-        tap((insertCount) => this.log(`added test w/ count=${insertCount}`)),
-        catchError(this.handleError<QuestionNumberVO[]>('new course'))
+      tap((insertCount) => this.log(`added test w/ count=${insertCount}`)),
+      catchError(this.handleError<QuestionNumberVO[]>('new course'))
     );
 
-}
+  }
+
+  getAllTestQuestionsByTestId(testId: number): Observable<TestQuestionVO> {
+    return this.http.get<TestQuestionVO>(`${this.API_URL}/test/getAllTestQuestionsByTestId/${testId}`);
 
 
+  }
 }
+

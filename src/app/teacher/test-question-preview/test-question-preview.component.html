@@ -7,10 +7,11 @@
   <h2>Equation: </h2>
   <p>Type here your equation:</p>
   <p><input type="text" [(ngModel)]="equation"></p>
-  <p><ng-katex [equation]="equation" [options]="options"></ng-katex></p>
+  <textarea [(ngModel)]="equation" rows=10 cols=50></textarea>
+  如图所示<ng-katex [equation]="equation" [options]="options"></ng-katex>
 
   <h2>Paragraph: </h2>
   <p>In progress <a target="_blank" href="https://github.com/garciparedes/ng-katex/issues/22">here</a>.</p>
 </div>
-
-<img [src]="testImg">
+<div>
+When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) </div>

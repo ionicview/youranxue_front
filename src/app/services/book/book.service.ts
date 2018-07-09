@@ -2,14 +2,13 @@ import { BaseService } from './../base.service';
 import { Injectable } from '@angular/core';
 import { TreeviewItem } from 'ngx-treeview';
 import { MessageService } from '../message.service';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
 })
 export class BookService extends BaseService {
 
-    constructor(private http: HttpClient, messageService: MessageService) {
+    constructor(messageService: MessageService) {
         super(messageService);
     }
 
