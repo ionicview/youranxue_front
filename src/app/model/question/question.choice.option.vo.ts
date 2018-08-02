@@ -4,4 +4,5 @@ export class QuestionChoiceOptionVO {
   choiceItem: string;
   imgList: Array<string>;
   rightAnswerFlg: boolean;
+  isSelected: boolean;
 }

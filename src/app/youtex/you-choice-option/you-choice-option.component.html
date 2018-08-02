@@ -1,0 +1,7 @@
+<span class="">
+    <a class="btn-floating btn-sm  btn-outline-primary" mdbWavesEffect>A</a>
+    &nbsp;<mdb-you-katex [latex]="choiceOption.choiceItem"></mdb-you-katex>
+</span>
+<div *ngFor="let optionImg of choiceOption.imgList; let myIndex = index" >
+  <mdb-you-img [src] ="optionImg"></mdb-you-img>
+</div>

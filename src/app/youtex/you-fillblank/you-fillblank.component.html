@@ -1,0 +1,20 @@
+<div *ngFor="let fillblankQuestion of fillblankList; let idxFillblank = index" >
+  <div *ngFor="let questionSection of fillblankQuestion.questionSections; let idxSection = index" class="d-inline-flex" >
+    <mdb-you-katex [latex]="questionSection"></mdb-you-katex>
+    <div *ngIf="idxSection < fillblankQuestion.blankCount">
+     <input type="text" [value]="fillblankQuestion.blankList[idxSection].yourAnswer" [disabled]="fillblankQuestion.blankList[idxSection].readOnlyMode">
+    </div>
+    <!--   idxSection {{fillblankQuestion.blankList[idxSection].yourAnswer}}-->
+  </div>
+
+  <!-- <div>
+      <mdb-you-katex [latex]="fillblankQuestion.question"></mdb-you-katex>
+  </div> -->
+
+
+
+  <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+</div>

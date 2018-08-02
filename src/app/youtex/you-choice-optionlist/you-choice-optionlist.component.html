@@ -1,0 +1,5 @@
+<div *ngFor="let choiceOption of choiceOptionList; let myIndex = index" >
+
+  <mdb-you-choice-option class="mt-0" [class.purple-gradient]="isSelected(choiceOption)" [choiceOption] = "choiceOption" (click)='clicked(choiceOption)'></mdb-you-choice-option>
+
+</div>

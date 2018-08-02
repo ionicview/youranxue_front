@@ -40,6 +40,12 @@ import { RadarChartComponent } from './charts/radar-chart/radar-chart.component'
 import { KatexModule } from 'ng-katex';
 import { MathjaxDirective } from './directive/mathjax.directive';
 import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
+import { YouChoiceComponent } from './youtex/you-choice/you-choice.component';
+import { YouChoiceOptionlistComponent } from './youtex/you-choice-optionlist/you-choice-optionlist.component';
+import { YouChoiceOptionComponent } from './youtex/you-choice-option/you-choice-option.component';
+import { YouImgComponent } from './youimg/you-img/you-img.component';
+import { YouFillblankComponent } from './youtex/you-fillblank/you-fillblank.component';
+import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswer.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +72,13 @@ import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
     RadarChartComponent,
     NewResourceComponent,
     MathjaxDirective,
-    YouKatexComponent
+    YouKatexComponent,
+    YouChoiceComponent,
+    YouChoiceOptionlistComponent,
+    YouChoiceOptionComponent,
+    YouImgComponent,
+    YouFillblankComponent,
+    YouShortanswerComponent
   ],
   imports: [
     BrowserModule,

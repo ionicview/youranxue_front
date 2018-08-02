@@ -39,18 +39,30 @@ export class TestQuestionPreviewComponent implements OnInit {
 
   ngOnInit() {
 
+    // 此处必须初始化，否则会空指针
+    this.fillblankList = [];
     this.route.params.subscribe(params => {
       this.testid = +params['testId']; // (+) converts string 'id' to a number
       this.testService.getAllTestQuestionsByTestId(this.testid).subscribe((questions: QuestionTestVO) => {
+
+        // 选择题
         this.choiceList = questions.choiceList;
-        this.fillblankList = questions.fillblankList;
+
+        questions.fillblankList.forEach((fillBlank: QuestionFillBlankVO) => {
+          // 将从服务器端接收到的数据，变换为画面端Object
+          // QuestionFillBlankVO的构造函数会将接收到题目转换为画面可显示结构
+
+          const fillBlankVO = new QuestionFillBlankVO(fillBlank.fillblankId, fillBlank.question, fillBlank.blankList, fillBlank.imgList);
+          this.fillblankList.push(fillBlankVO);
+        });
+
+        // 问答题
         this.shortAnswerList = questions.shortAnswerList;
 
         this.questionTest = questions;
 
       });
 
-      console.log(this.questionTest);
 
     });
 
@@ -61,5 +73,6 @@ export class TestQuestionPreviewComponent implements OnInit {
 
     this.testImg = 'https://upload.wikimedia.org/wikipedia/commons/5/52/Barrulet_demo.svg';
   }
+
 
 }

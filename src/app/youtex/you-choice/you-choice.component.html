@@ -1,0 +1,13 @@
+<div *ngFor="let choiceQuestion of choiceQuestionList; let myIndex = index" class="card-body">
+
+  <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
+  <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div *ngFor="let questionImg of choiceQuestion.imgList; let myIndex = index">
+    <mdb-you-img [src]="questionImg"></mdb-you-img>
+  </div>
+  <mdb-you-choice-optionlist [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
+
+
+</div>
