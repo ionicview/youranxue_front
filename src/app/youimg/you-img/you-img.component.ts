@@ -7,7 +7,7 @@ import { environment } from 'environments/environment';
   styleUrls: ['./you-img.component.scss']
 })
 export class YouImgComponent implements OnInit {
-  public API_URL = environment.apiUrl;
+
   @Input() src: string;
   constructor() { }
 
@@ -17,10 +17,10 @@ export class YouImgComponent implements OnInit {
     }
 
     if (!this.src.startsWith('http')) {
-      console.log("API_URL:"+this.API_URL);
-      
-      this.src = this.API_URL.concat('/').concat(this.src);
-      console.log("SRC:"+this.src);
+      console.log('API_URL:' + environment.apiUrl);
+
+      this.src = environment.apiUrl.concat('/').concat(this.src);
+      console.log('SRC:' + this.src);
     }
 
   }

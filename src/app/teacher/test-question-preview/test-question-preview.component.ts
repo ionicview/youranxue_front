@@ -1,5 +1,5 @@
-import { TestService } from './../../services/test.service';
-import { QuestionTestVO } from './../../model/question/question.test.vo';
+import { TestService } from '../../services/test.service';
+import { QuestionTestVO } from '../../model/question/question.test.vo';
 import { Component, OnInit } from '@angular/core';
 import { KatexOptions } from 'ng-katex';
 import { ActivatedRoute } from '@angular/router';

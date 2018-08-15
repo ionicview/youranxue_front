@@ -1,4 +1,4 @@
-import { BaseService } from './../base.service';
+import { BaseService } from '../base.service';
 import { Injectable } from '@angular/core';
 import { TreeviewItem } from 'ngx-treeview';
 import { MessageService } from '../message.service';

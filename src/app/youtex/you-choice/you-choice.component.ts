@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuestionChoiceVO } from './../../model/question/question.choice.vo';
+import { QuestionChoiceVO } from '../../model/question/question.choice.vo';
 import { QuestionChoiceOptionVO } from '../../model/question/question.choice.option.vo';
 
 
@@ -17,8 +17,8 @@ export class YouChoiceComponent implements OnInit {
   }
 
   optionSelected(selectedOption: QuestionChoiceOptionVO) {
-    //alert("IN");
-    console.log("selectedid:" + selectedOption.choiceId);
+
+    console.log(' selectedid:' + selectedOption.choiceId);
 
     console.log(this.choiceQuestionList[0].choiceOptionList[2].isSelected);
   }

@@ -17,7 +17,7 @@ export class QuestionFillBlankVO {
         this.question = question;
         this.blankList = blankList;
         this.imgList = imgList;
-        
+
         console.log('fillblank from server:' + blankList[0].yourAnswer);
         console.log('In Question FillBlank VO:' + this.question);
         this.questionSections = this.question.split(this.BLANK_MARK_STR);

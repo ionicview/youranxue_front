@@ -1,3 +1,5 @@
+import { CourseListComponent } from './teacher/course-list/course-list.component';
+import { TransChoiceOption } from './model/enum/trans.choice.option';
 import { MessageService } from './services/message.service';
 import { ToastModule } from './typescripts/pro/alerts/toast/toast.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,14 +9,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from './typescripts/free';
-import { MDBBootstrapModulePro } from './typescripts/pro/index';
+import { MDBBootstrapModulePro } from './typescripts/pro';
 import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
-import { MDBSpinningPreloader } from './typescripts/pro/index';
+import { MDBSpinningPreloader } from './typescripts/pro';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
 import { NavbarComponent } from './navbar.component';
-import { CourseListComponent } from './teacher/course-list/course-list.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { routing } from './app.routing.module';
 import { CourseService } from './services/course.service';
@@ -53,7 +54,6 @@ import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswe
     TeacherFormComponent,
     NewCourseComponent,
     NavbarComponent,
-    CourseListComponent,
     ViewClassStudentComponent,
     LoginComponent,
     HomeComponent,
@@ -61,6 +61,7 @@ import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswe
     HeaderComponent,
     AllResourcesComponent,
     TransCourseStatus,
+    TransChoiceOption,
     NewTestComponent,
     TestListComponent,
     TestQuestionEditComponent,
@@ -71,6 +72,7 @@ import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswe
     TestQuestionPreviewComponent,
     RadarChartComponent,
     NewResourceComponent,
+    CourseListComponent,
     MathjaxDirective,
     YouKatexComponent,
     YouChoiceComponent,

@@ -1,5 +1,5 @@
 <span class="">
-    <a class="btn-floating btn-sm  btn-outline-primary" mdbWavesEffect>A</a>
+    <a class="btn-floating btn-sm  btn-outline-primary" >{{ choiceOption.sequenceNo | transChoiceOption}}.</a>
     &nbsp;<mdb-you-katex [latex]="choiceOption.choiceItem"></mdb-you-katex>
 </span>
 <div *ngFor="let optionImg of choiceOption.imgList; let myIndex = index" >

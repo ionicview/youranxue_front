@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-you-shortanswer',
+  selector: 'mdb-you-shortanswer',
   templateUrl: './you-shortanswer.component.html',
   styleUrls: ['./you-shortanswer.component.scss']
 })

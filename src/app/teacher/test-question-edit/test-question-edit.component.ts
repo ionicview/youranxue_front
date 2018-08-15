@@ -1,5 +1,5 @@
-import { TestService } from './../../services/test.service';
-import { QuestionNumberVO } from './../../model/question/question.number.vo';
+import { TestService } from '../../services/test.service';
+import { QuestionNumberVO } from '../../model/question/question.number.vo';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from '../../services/book/book.service';

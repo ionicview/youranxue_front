@@ -1,4 +1,4 @@
-import { CourseViewVO } from './../../model/course/course.view.vo';
+import { CourseViewVO } from '../../model/course/course.view.vo';
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 
