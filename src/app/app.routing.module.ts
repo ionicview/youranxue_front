@@ -1,3 +1,5 @@
+import { FillblankQuestionComponent } from './master/fillblank-question/fillblank-question.component';
+import { ChoiceQuestionComponent } from './master/choice-question/choice-question.component';
 import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
@@ -15,10 +17,14 @@ import { ChartsTestComponent } from './charts/charts-test/charts-test.component'
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
+import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
+    { path: 'create-choice-question', component: ChoiceQuestionComponent},
+    { path: 'create-fillblank-question', component: FillblankQuestionComponent},
+    { path: 'create-shortanswer-question', component: ShortanswerQuestionComponent},
     { path: 'sample', component: SampleComponent },
     { path: 'all-resources', component: AllResourcesComponent },
     { path: 'login', component: LoginComponent },

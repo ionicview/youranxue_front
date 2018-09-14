@@ -47,6 +47,11 @@ import { YouChoiceOptionComponent } from './youtex/you-choice-option/you-choice-
 import { YouImgComponent } from './youimg/you-img/you-img.component';
 import { YouFillblankComponent } from './youtex/you-fillblank/you-fillblank.component';
 import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswer.component';
+import { QuestionMstComponent } from './master/question-mst/question-mst.component';
+import { ChoiceQuestionComponent } from './master/choice-question/choice-question.component';
+import { FillblankQuestionComponent } from './master/fillblank-question/fillblank-question.component';
+import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
+import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-choice.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +85,12 @@ import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswe
     YouChoiceOptionComponent,
     YouImgComponent,
     YouFillblankComponent,
-    YouShortanswerComponent
+    YouShortanswerComponent,
+    QuestionMstComponent,
+    ChoiceQuestionComponent,
+    FillblankQuestionComponent,
+    ShortanswerQuestionComponent,
+    YouSingleChoiceComponent
   ],
   imports: [
     BrowserModule,

@@ -31,9 +31,30 @@
             <!-- Collapsible link -->
             <mdb-item>
               <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-chevron-right"></i>题目录入</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li routerLinkActive="active">
+                    <a routerLink="/create-choice-question" class="waves-effect" mdbRippleRadius>选择题</a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/create-fillblank-question" class="waves-effect" mdbRippleRadius>填空题</a>
+                  </li>
+                  <li routerLinkActive="active">
+                    <a routerLink="/create-shortanswer-question" class="waves-effect" mdbRippleRadius>问答题</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
+            <!-- Collapsible link -->
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
                 <i class="fa fa-chevron-right"></i>测试</mdb-item-head>
               <mdb-item-body>
                 <ul>
+                  <li routerLinkActive="active">
+                    <a routerLink="/create-question" class="waves-effect" mdbRippleRadius>题目录入</a>
+                  </li>
                   <li routerLinkActive="active">
                     <a routerLink="/home" class="waves-effect" mdbRippleRadius>Home</a>
                   </li>
