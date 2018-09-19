@@ -10,126 +10,52 @@
           class="form-control"></textarea>
 
       </div>
-<br>
-  <!-- <ng-katex [equation]="choiceQuestion.question" ></ng-katex> -->
-   <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
-      <!--      
-        <div class="col-md-9">
-          <label for="questionImgs" class="font-weight-bold blue-text">选择题图片</label>
-          <textarea type="text" id="questionImgs" data-error="  " data-success="  " placeholder="请输入选择题图片地址，多个图片用；隔开" class="form-control"
-            formControlName="questionImgs" mdbInputDirective></textarea>
-        </div>
-        <div class="col-md-9">
-          <label for="hintQuestionIds" class="font-weight-bold blue-text">选择提示题目ID</label>
-          <textarea type="text" id="hintQuestionIds" data-error="  " data-success="  " placeholder="请输入选择题提示题目ID，多个提示题目用；号隔开" class="form-control"
-            formControlName="hintQuestionIds" mdbInputDirective></textarea>
-        </div>
-        <br>
-        <div class="table-responsive">
-          <table class="table table-sm ">
-            <thead>
-              <tr>
-                <th scope="col" width="40px">选项</th>
-                <th scope="col" width="180px">题干</th>
-                <th width="20px"></th>
-                <th scope="col" width="180px">图片</th>
-                <th width="20px"></th>
-                <th scope="col" width="100px">正确答案</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">A</td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项内容" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项图片" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio1">
-                  <label class="form-check-label" for="radio1">Option 1</label>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">B</td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项内容" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项图片" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio2">
-                  <label class="form-check-label" for="radio2">Option 1</label>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">C</td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项内容" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项图片" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio3">
-                  <label class="form-check-label" for="radio3">Option 3</label>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">D</td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项内容" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <textarea width="100px" type="text" id="question" data-error="  " data-success="  " placeholder="请输入选项图片" class="form-control"
-                    formControlName="question" mdbInputDirective></textarea>
-                </td>
-                <td></td>
-                <td>
-                  <input class="form-check-input" mdbInputDirective name="group1" type="radio" id="radio4">
-                  <label class="form-check-label" for="radio4">Option 1</label>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <br>
-     -->  
-      <!-- <div>{{questionChoice.question}}</div> -->
-      <!-- question preview -->
-      <!-- <mdb-app-you-single-choice [choiceQuestion]="questionChoice"></mdb-app-you-single-choice> -->
+      <br>
 
-
-
-      <!-- <mdb-you-katex [latex]="choiceQuestion.quesiton"></mdb-you-katex> -->
-      <div *ngFor="let questionImg of choiceQuestion.imgList; let myIndex = index">
-        <mdb-you-img [src]="questionImg"></mdb-you-img>
+      <!--   -->
+      <div class="col-md-9">
+        <label for="questionImgs" class="font-weight-bold blue-text">选择题图片</label>
+        <textarea type="text" id="questionImgs" data-error="  " data-success="  " placeholder="请输入选择题图片地址，多个图片用；隔开"
+          class="form-control" [(ngModel)]="choiceQuestion.imgListStr" mdbInputDirective></textarea>
       </div>
-      <mdb-you-choice-optionlist [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
-
-      <!-- question preview end -->
+      <div class="col-md-9">
+        <label for="hintQuestionIds" class="font-weight-bold blue-text">选择提示题目ID</label>
+        <textarea type="text" id="hintQuestionIds" data-error="  " data-success="  " placeholder="请输入选择题提示题目ID，多个提示题目用；号隔开"
+          class="form-control" [(ngModel)]="choiceQuestion.hintQuestionIdListStr" mdbInputDirective></textarea>
+      </div>
+      <br>
+      <mdb-choice-option [choiceOptionList]="choiceQuestion.choiceOptionList"></mdb-choice-option>
 
       <br>
-      <button type="submit" class="btn btn-primary waves-light" mdbRippleRadius>
-        <i class="fa fa-check mr-1"></i>&nbsp;提交</button>
-      <button type="button" (click)="reset()" class="btn btn-default waves-light" mdbWavesEffect>
-        <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+
     </div>
   </div>
+</div>
+
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">题目预览</h3>
+  <div class="card-body">
+
+    <div class="container">
+      <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
+      <div class="table-responsive">
+        <table class="table table-sm ">
+          <tr *ngFor="let option of choiceQuestion.choiceOptionList">
+            <td width="30px"> <button [ngClass]="(option.status=='rightAnswer') ? 'rightAnswer':'unselected'">{{
+                option.sequenceNo | transChoiceOption}}</button></td>
+            <td width="900px">
+              <mdb-you-katex [latex]="option.choiceItem"></mdb-you-katex>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button type="button" class="btn btn-primary waves-light" (click)="submit()" mdbRippleRadius>
+    <i class="fa fa-check mr-1"></i>&nbsp;提交</button>
+  <button type="button" (click)="reset()" class="btn btn-default waves-light" mdbWavesEffect>
+    <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
 </div>

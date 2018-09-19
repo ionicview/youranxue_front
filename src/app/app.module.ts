@@ -1,3 +1,4 @@
+import { QuestionService } from './services/master/question/question.service';
 import { CourseListComponent } from './teacher/course-list/course-list.component';
 import { TransChoiceOption } from './model/enum/trans.choice.option';
 import { MessageService } from './services/message.service';
@@ -52,6 +53,7 @@ import { ChoiceQuestionComponent } from './master/choice-question/choice-questio
 import { FillblankQuestionComponent } from './master/fillblank-question/fillblank-question.component';
 import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
 import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-choice.component';
+import { ChoiceOptionComponent } from './master/choice-question/choice-option/choice-option.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,8 @@ import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-
     ChoiceQuestionComponent,
     FillblankQuestionComponent,
     ShortanswerQuestionComponent,
-    YouSingleChoiceComponent
+    YouSingleChoiceComponent,
+    ChoiceOptionComponent
   ],
   imports: [
     BrowserModule,
@@ -111,7 +114,7 @@ import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService],
+  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService, QuestionService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
