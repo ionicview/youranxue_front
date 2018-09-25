@@ -1,7 +1,9 @@
 export class QuestionChoiceOptionVO {
-  choiceId: number;
+  // 题目ID
+  questionId: number;
   sequenceNo: number;
   choiceItem: string;
+  // 图片
   imgList: Array<string>;
   imgListStr: string;
   rightAnswerFlg: boolean;

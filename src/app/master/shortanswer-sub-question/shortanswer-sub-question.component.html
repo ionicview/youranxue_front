@@ -1,0 +1,30 @@
+<div class="card-body">
+  <div class="container">
+
+    <div *ngFor="let subQuestion of subQuestionList">
+
+     <div class="col-md-9">
+      <label for="question" class="font-weight-bold blue-text">小题题干</label>
+      <textarea type="text" id="subQuestion" data-error="  " data-success="  " placeholder="请输入小题题干" [(ngModel)]="subQuestion.subQuestion"
+        class="form-control"></textarea>
+
+    </div>
+    <br>
+
+    <div class="col-md-9">
+      <label for="questionImgs" class="font-weight-bold blue-text">小题图片</label>
+      <textarea type="text" id="subQuestionImgListStr" data-error="  " data-success="  " placeholder="请输入小题图片地址，多个图片用；隔开"
+        class="form-control" [(ngModel)]="subQuestion.subQuestionImgListStr" mdbInputDirective></textarea>
+    </div>
+
+    <br>
+
+    <div class="col-md-9">
+      <label for="questionImgs" class="font-weight-bold blue-text">小题正确答案</label>
+      <textarea type="text" id="subQuestionRightAnswer" data-error="  " data-success="  " placeholder="请输入小题正确答案"
+        class="form-control" [(ngModel)]="subQuestion.subQuestionanswer.rightAnswer" mdbInputDirective></textarea>
+    </div>
+
+    </div>
+  </div>
+</div>

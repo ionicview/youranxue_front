@@ -18,7 +18,7 @@ export class YouChoiceComponent implements OnInit {
 
   optionSelected(selectedOption: QuestionChoiceOptionVO) {
 
-    console.log(' selectedid:' + selectedOption.choiceId);
+    console.log(' selectedid:' + selectedOption.sequenceNo);
 
     console.log(this.choiceQuestionList[0].choiceOptionList[2].isSelected);
   }

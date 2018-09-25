@@ -54,6 +54,7 @@ import { FillblankQuestionComponent } from './master/fillblank-question/fillblan
 import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
 import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-choice.component';
 import { ChoiceOptionComponent } from './master/choice-question/choice-option/choice-option.component';
+import { ShortanswerSubQuestionComponent } from './master/shortanswer-sub-question/shortanswer-sub-question.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { ChoiceOptionComponent } from './master/choice-question/choice-option/ch
     FillblankQuestionComponent,
     ShortanswerQuestionComponent,
     YouSingleChoiceComponent,
-    ChoiceOptionComponent
+    ChoiceOptionComponent,
+    ShortanswerSubQuestionComponent
   ],
   imports: [
     BrowserModule,
