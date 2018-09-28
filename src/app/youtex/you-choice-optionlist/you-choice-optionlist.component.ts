@@ -30,6 +30,6 @@ export class YouChoiceOptionlistComponent implements OnInit {
     if (!choiceOption || !this.currentOption) {
       return false;
     }
-    return choiceOption.choiceId === this.currentOption.choiceId;
+    return choiceOption.sequenceNo === this.currentOption.sequenceNo;
   }
 }

@@ -1,19 +1,18 @@
-import { QuestionFillBlankBlankVO } from './question.fillblank.blank.vo';
+import { QuestionAnswerVO } from './question.answer.vo';
+import { BaseQuestionVO } from './base.question.vo';
 
-export class QuestionFillBlankVO {
+
+export class QuestionFillBlankVO extends BaseQuestionVO {
 
     private BLANK_MARK_STR = '#BLANK#';
 
-    fillblankId: number;
-    question: string;
     blankCount: number;
     questionSections: Array<string>;
-    imgList: Array<string>;
-    blankList: Array<QuestionFillBlankBlankVO>;
+    blankList: Array<QuestionAnswerVO>;
 
-    constructor(fillblankId: number, question: string, blankList: Array<QuestionFillBlankBlankVO>, imgList: Array<string>) {
+    init(fillblankId: number, question: string, blankList: Array<QuestionAnswerVO>, imgList: Array<string>) {
 
-        this.fillblankId = fillblankId;
+        this.questionId = fillblankId;
         this.question = question;
         this.blankList = blankList;
         this.imgList = imgList;

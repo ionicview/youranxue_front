@@ -1,3 +1,66 @@
-<p>
-  fillblank-question works!
-</p>
+<!--Panel-->
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">添加新填空题</h3>
+  <div class="card-body">
+
+    <div class="container">
+      <div class="col-md-9">
+        <label for="question" class="font-weight-bold blue-text">填空题题干</label>
+        <textarea (ng-change)="updateBlank()" type="text" id="question" data-error="  " data-success="  " placeholder="请输入填空题题干" [(ngModel)]="fillBlankQuestion.question"
+          class="form-control"></textarea>
+
+      </div>
+      <br>
+
+      <!--   -->
+      <div class="col-md-9">
+        <label for="questionImgs" class="font-weight-bold blue-text">填空题图片</label>
+        <textarea type="text" id="questionImgs" data-error="  " data-success="  " placeholder="请输入填空题图片地址，多个图片用；隔开"
+          class="form-control" [(ngModel)]="fillBlankQuestion.imgListStr" mdbInputDirective></textarea>
+      </div>
+      <div class="col-md-9">
+        <label for="hintQuestionIds" class="font-weight-bold blue-text">选择提示题目ID</label>
+        <textarea type="text" id="hintQuestionIds" data-error="  " data-success="  " placeholder="请输入填空题提示题目ID，多个提示题目用；号隔开"
+          class="form-control" [(ngModel)]="fillBlankQuestion.hintQuestionIdListStr" mdbInputDirective></textarea>
+      </div>
+      <br>
+          <td><button type="button" class="btn btn-primary waves-light"  (click)='addBlank()'>填空内容追加</button></td>
+          <!-- <button mdbBtn color="secondary" class="float-left">填空内容追加</button> -->
+
+      <div *ngFor="let questionSection of fillBlankQuestion.questionSections; let idxSection = index">
+          <div *ngIf="idxSection < fillBlankQuestion.blankCount">
+              <textarea [(ngModel)]="fillBlankQuestion.blankList[idxSection].rightAnswer" type="text" id="rightAnswer" placeholder="请输入正确答案内容"
+              class="form-control"></textarea>
+          </div>
+
+
+
+
+      <br>
+
+    </div>
+  </div>
+</div>
+
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">题目预览</h3>
+  <div class="card-body">
+
+    <div class="container">
+      <mdb-you-katex [latex]="fillBlankQuestion.question"></mdb-you-katex>
+      <div *ngFor="let questionSection of fillBlankQuestion.questionSections; let idxSection = index">
+      <div *ngIf="idxSection < fillBlankQuestion.blankCount">
+         <div class="form-control" item-height="100">
+            <mdb-you-katex [latex]="fillBlankQuestion.blankList[idxSection].rightAnswer"></mdb-you-katex>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <button type="button" class="btn btn-primary waves-light" (click)="submit()" mdbRippleRadius>
+    <i class="fa fa-check mr-1"></i>&nbsp;提交</button>
+  <button type="button" (click)="reset()" class="btn btn-default waves-light" mdbWavesEffect>
+    <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+</div>

@@ -48,13 +48,15 @@ export class TestQuestionPreviewComponent implements OnInit {
         // 选择题
         this.choiceList = questions.choiceList;
 
-        questions.fillblankList.forEach((fillBlank: QuestionFillBlankVO) => {
-          // 将从服务器端接收到的数据，变换为画面端Object
-          // QuestionFillBlankVO的构造函数会将接收到题目转换为画面可显示结构
-
-          const fillBlankVO = new QuestionFillBlankVO(fillBlank.fillblankId, fillBlank.question, fillBlank.blankList, fillBlank.imgList);
-          this.fillblankList.push(fillBlankVO);
-        });
+        // 选择题
+        this.fillblankList = questions.fillblankList;
+//        questions.fillblankList.forEach((fillBlank: QuestionFillBlankVO) => {
+//          // 将从服务器端接收到的数据，变换为画面端Object
+//          // QuestionFillBlankVO的构造函数会将接收到题目转换为画面可显示结构
+//
+//          const fillBlankVO = new QuestionFillBlankVO(fillBlank.fillblankId, fillBlank.question, fillBlank.blankList, fillBlank.imgList);
+//          this.fillblankList.push(fillBlankVO);
+//        });
 
         // 问答题
         this.shortAnswerList = questions.shortAnswerList;

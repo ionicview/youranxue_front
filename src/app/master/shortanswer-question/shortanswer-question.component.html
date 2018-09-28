@@ -1,3 +1,64 @@
-<p>
-  shortanswer-question works!
-</p>
+<!--Panel-->
+<div class="card  mb-3">
+    <h3 class="card-header primary-color white-text">添加新问答题</h3>
+    <div class="card-body">
+  
+      <div class="container">
+        <div class="col-md-9">
+          <label for="question" class="font-weight-bold blue-text">问答题题干</label>
+          <textarea (ng-change)="updateBlank()" type="text" id="question" data-error="  " data-success="  " placeholder="请输入问答题题干" [(ngModel)]="shortAnswer.question"
+            class="form-control"></textarea>
+  
+        </div>
+        <br>
+  
+        <!--   -->
+        <div class="col-md-9">
+          <label for="questionImgs" class="font-weight-bold blue-text">问答题图片</label>
+          <textarea type="text" id="questionImgs" data-error="  " data-success="  " placeholder="请输入问答题图片地址，多个图片用；隔开"
+            class="form-control" [(ngModel)]="shortAnswer.imgListStr" mdbInputDirective></textarea>
+        </div>
+        <div class="col-md-9">
+          <label for="hintQuestionIds" class="font-weight-bold blue-text">选择提示题目ID</label>
+          <textarea type="text" id="hintQuestionIds" data-error="  " data-success="  " placeholder="请输入问答题提示题目ID，多个提示题目用；号隔开"
+            class="form-control" [(ngModel)]="shortAnswer.hintQuestionIdListStr" mdbInputDirective></textarea>
+        </div>
+        <br>
+            <td><button type="button" class="btn btn-primary waves-light"  (click)='addSubShortAnswer()'>添加小题</button></td>
+            <!-- <button mdbBtn color="secondary" class="float-left">填空内容追加</button> -->
+  
+        <div *ngIf="shortAnswer.subQuestionList.length > 0">
+          <mdb-shortanswer-sub-question [subQuestionList]="shortAnswer.subQuestionList"></mdb-shortanswer-sub-question>
+        </div>  
+  
+  
+  
+        <br>
+  
+      </div>
+    </div>
+  </div>
+  
+  <div class="card  mb-3">
+    <h3 class="card-header primary-color white-text">题目预览</h3>
+    <div class="card-body">
+  
+      <div class="container">
+        <mdb-you-katex [latex]="shortAnswer.question"></mdb-you-katex>
+        <div *ngFor="let questionSection of shortAnswer.subQuestionList; let idxSection = index">
+           <div class="form-control" item-height="100">
+              <mdb-you-katex [latex]="shortAnswer.subQuestionList[idxSection].subQuestion"></mdb-you-katex>
+           </div>
+           <div class="form-control" item-height="100">
+            <mdb-you-katex [latex]="shortAnswer.subQuestionList[idxSection].subQuestionanswer.rightAnswer"></mdb-you-katex>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <button type="button" class="btn btn-primary waves-light" (click)="submit()" mdbRippleRadius>
+      <i class="fa fa-check mr-1"></i>&nbsp;提交</button>
+    <button type="button" (click)="reset()" class="btn btn-default waves-light" mdbWavesEffect>
+      <i class="fa fa-times ml-1"></i>&nbsp;取消</button>
+  </div>
