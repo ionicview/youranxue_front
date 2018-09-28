@@ -1,3 +1,5 @@
+
+import { ActsResultComponent } from './acts/acts-result/acts-result.component';
 import { FillblankQuestionComponent } from './master/fillblank-question/fillblank-question.component';
 import { ChoiceQuestionComponent } from './master/choice-question/choice-question.component';
 import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
@@ -17,6 +19,8 @@ import { ChartsTestComponent } from './charts/charts-test/charts-test.component'
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
+import { ActsHeaderComponent } from 'app/acts/acts-header/acts-header.component';
+import { ActsChartsComponent } from 'app/acts/acts-charts/acts-charts.component';
 import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
 
 const routes: Routes = [
@@ -33,12 +37,15 @@ const routes: Routes = [
     { path: 'test-list', component: TestListComponent },
     { path: 'new-test', component: NewTestComponent },
     { path: 'test-question-edit', component: TestQuestionEditComponent },
+    { path: 'test-question-preview', component: TestQuestionPreviewComponent },
     { path: 'test-question-preview/:testId', component: TestQuestionPreviewComponent, pathMatch: 'full' },
     { path: 'view-class-student', component: ViewClassStudentComponent },
     { path: 'radar-chart', component: RadarChartComponent },
     { path: 'polar-area-chart', component: PolarAreaChartComponent },
     { path: 'charts-test', component: ChartsTestComponent },
+    { path: 'acts-result', component: ActsResultComponent },
+    { path: 'acts-header', component: ActsHeaderComponent },
+    { path: 'acts-charts', component: ActsChartsComponent },
     { path: 'latex-test', component: YouKatexComponent }
-
 ];
 export const routing = RouterModule.forRoot(routes);

@@ -39,6 +39,8 @@ export class TestQuestionEditComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
     this.bookContents = this.bookService.getContentsByBookId(11);
 
     this.sectionMap = new Map<number, QuestionNumberVO>();
@@ -46,7 +48,6 @@ export class TestQuestionEditComponent implements OnInit {
     this.questionNumberList = [];
     this.bookContents.forEach(contents => {
       const chapterStr = contents.text;
-
       contents.children.forEach(children => {
 
         const sectionNameWithChapter = chapterStr.concat(' ： ').concat(children.text);
@@ -57,6 +58,7 @@ export class TestQuestionEditComponent implements OnInit {
 
         // this.questionNumberList.push(sectionQuestion);
         console.log(children.value + ':' + chapterStr.concat(children.text));
+
       });
 
     });
@@ -71,7 +73,9 @@ export class TestQuestionEditComponent implements OnInit {
   onSelectedChange(event: number[]) {
     this.selectedSectionIds = event;
     console.debug(event);
+
     // 初期化选中章节
+
     this.questionNumberList = [];
 
 
@@ -84,7 +88,9 @@ export class TestQuestionEditComponent implements OnInit {
 
     });
 
+
     // 从Map中选取选中的章节
+
     // this.selectedSectionIds.forEach((sectionId: number) => {
     //   console.log(sectionId);
     //   var questionNumberVO = this.sectionMap.get(sectionId);

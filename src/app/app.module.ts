@@ -39,6 +39,11 @@ import { NewResourceComponent } from './resources/new-resource/new-resource.comp
 import { TestQuestionPreviewComponent } from './teacher/test-question-preview/test-question-preview.component';
 import { PolarAreaChartComponent } from './charts/polar-area-chart/polar-area-chart.component';
 import { RadarChartComponent } from './charts/radar-chart/radar-chart.component';
+import { ActsResultComponent } from './acts/acts-result/acts-result.component';
+import { ActsHeaderComponent } from './acts/acts-header/acts-header.component';
+import { ActsChartsComponent } from './acts/acts-charts/acts-charts.component';
+import { ActsGradeComponent } from './acts/acts-grade/acts-grade.component';
+import { ActsResultService } from 'app/services/acts/acts-result.service';
 import { KatexModule } from 'ng-katex';
 import { MathjaxDirective } from './directive/mathjax.directive';
 import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
@@ -80,6 +85,10 @@ import { ShortanswerSubQuestionComponent } from './master/shortanswer-sub-questi
     TestQuestionPreviewComponent,
     RadarChartComponent,
     NewResourceComponent,
+    ActsResultComponent,
+    ActsHeaderComponent,
+    ActsChartsComponent,
+    ActsGradeComponent
     CourseListComponent,
     MathjaxDirective,
     YouKatexComponent,
@@ -116,7 +125,10 @@ import { ShortanswerSubQuestionComponent } from './master/shortanswer-sub-questi
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService, BookService, QuestionService],
+  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService,
+              ActsResultComponent, ActsResultService,
+              BookService, QuestionService],
+
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

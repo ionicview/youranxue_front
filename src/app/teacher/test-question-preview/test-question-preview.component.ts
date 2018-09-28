@@ -16,6 +16,7 @@ import { QuestionShortAnswerVO } from '../../model/question/question.short.answe
 export class TestQuestionPreviewComponent implements OnInit {
   equationTexString: string;
   testImg: string;
+
   title = 'ng-katex';
   url = 'https://github.com/garciparedes/ng-katex';
   equation = 'x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}';

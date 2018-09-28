@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'mdb-app-radar-chart',
@@ -7,20 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RadarChartComponent implements OnInit {
 
-  public chartType = 'radar';
-  public radar = 'radar';
-
-  public chartDatasets: Array<any> = [
+  @Input() public chartType = 'radar';
+  @Input() public chartDatasets: Array<any> = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
   ];
+  @Input()
+  public chartLabels: Array<any> = ['1', '2', '3', '4', '5', '6', '7'];
 
-  public chartLabels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
-
+  @Input()
   public chartColors: Array<any> = [
     {
-      backgroundColor: 'rgba(220,220,220,0.2)',
-      borderColor: 'rgba(220,220,220,1)',
+      backgroundColor: 'rgba(220,220,220,0.3)',
+      borderColor: 'rgba(220,220,220,0.4)',
       borderWidth: 2,
       pointBackgroundColor: 'rgba(220,220,220,1)',
       pointBorderColor: '#fff',
@@ -46,8 +45,10 @@ export class RadarChartComponent implements OnInit {
     console.log(e);
     console.log(e.active);
   }
-  constructor() { }
+  // constructor() { }
   ngOnInit() {
+    console.log(this.chartType);
+    console.log(this.chartDatasets);
   }
 
 }

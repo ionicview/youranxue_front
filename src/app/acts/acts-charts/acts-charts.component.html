@@ -1,0 +1,6 @@
+<!-- <pre>{{charts | json}}</pre> -->
+<td *ngFor="let chart of charts">
+    {{chart.category}}
+    <mdb-app-radar-chart [chartType]="chartType" [chartDatasets]="chart.chartDatasets">
+    </mdb-app-radar-chart>
+</td>
