@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-sm ">
+    <thead>
+      <tr>
+        <th scope="col" width="40px">选项</th>
+        <th scope="col" width="45%">题干</th>
+        <th width="10px"></th>
+        <th scope="col" width="45%">图片</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let option of choiceOptionList">
+        <!-- <td scope="row">{{option.sequenceNo | transChoiceOption}}</td> -->
+        <td> <button  (click)='optionClicked(option)' [class.rightAnswer]="isSelected(option)" [class.unselected]="!isSelected(option)">{{ option.sequenceNo | transChoiceOption}}</button></td>
+        <td>
+          <textarea [(ngModel)]="option.choiceItem" type="text" id="choiceItem" placeholder="请输入选项内容"
+            class="form-control"></textarea>
+        </td>
+        <td></td>
+        <td>
+          <textarea [(ngModel)]="option.imgListStr" type="text" id="imgListStr" placeholder="请输入选项图片"
+            class="form-control"></textarea>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>

@@ -1,3 +1,6 @@
+import { QuestionService } from './services/master/question/question.service';
+import { CourseListComponent } from './teacher/course-list/course-list.component';
+import { TransChoiceOption } from './model/enum/trans.choice.option';
 import { MessageService } from './services/message.service';
 import { ToastModule } from './typescripts/pro/alerts/toast/toast.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,14 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MDBBootstrapModule } from './typescripts/free';
-import { MDBBootstrapModulePro } from './typescripts/pro/index';
+import { MDBBootstrapModulePro } from './typescripts/pro';
 import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
-import { MDBSpinningPreloader } from './typescripts/pro/index';
+import { MDBSpinningPreloader } from './typescripts/pro';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
 import { NewCourseComponent } from './teacher/new-course/new-course.component';
 import { NavbarComponent } from './navbar.component';
-import { CourseListComponent } from './teacher/course-list/course-list.component';
 import { ViewClassStudentComponent } from './teacher/view-class-student/view-class-student.component';
 import { routing } from './app.routing.module';
 import { CourseService } from './services/course.service';
@@ -42,7 +44,22 @@ import { ActsHeaderComponent } from './acts/acts-header/acts-header.component';
 import { ActsChartsComponent } from './acts/acts-charts/acts-charts.component';
 import { ActsGradeComponent } from './acts/acts-grade/acts-grade.component';
 import { ActsResultService } from 'app/services/acts/acts-result.service';
-
+import { KatexModule } from 'ng-katex';
+import { MathjaxDirective } from './directive/mathjax.directive';
+import { YouKatexComponent } from './youtex/you-katex/you-katex.component';
+import { YouChoiceComponent } from './youtex/you-choice/you-choice.component';
+import { YouChoiceOptionlistComponent } from './youtex/you-choice-optionlist/you-choice-optionlist.component';
+import { YouChoiceOptionComponent } from './youtex/you-choice-option/you-choice-option.component';
+import { YouImgComponent } from './youimg/you-img/you-img.component';
+import { YouFillblankComponent } from './youtex/you-fillblank/you-fillblank.component';
+import { YouShortanswerComponent } from './youtex/you-shortanswer/you-shortanswer.component';
+import { QuestionMstComponent } from './master/question-mst/question-mst.component';
+import { ChoiceQuestionComponent } from './master/choice-question/choice-question.component';
+import { FillblankQuestionComponent } from './master/fillblank-question/fillblank-question.component';
+import { ShortanswerQuestionComponent } from './master/shortanswer-question/shortanswer-question.component';
+import { YouSingleChoiceComponent } from './youtex/you-single-choice/you-single-choice.component';
+import { ChoiceOptionComponent } from './master/choice-question/choice-option/choice-option.component';
+import { ShortanswerSubQuestionComponent } from './master/shortanswer-sub-question/shortanswer-sub-question.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +67,6 @@ import { ActsResultService } from 'app/services/acts/acts-result.service';
     TeacherFormComponent,
     NewCourseComponent,
     NavbarComponent,
-    CourseListComponent,
     ViewClassStudentComponent,
     LoginComponent,
     HomeComponent,
@@ -58,6 +74,7 @@ import { ActsResultService } from 'app/services/acts/acts-result.service';
     HeaderComponent,
     AllResourcesComponent,
     TransCourseStatus,
+    TransChoiceOption,
     NewTestComponent,
     TestListComponent,
     TestQuestionEditComponent,
@@ -72,6 +89,22 @@ import { ActsResultService } from 'app/services/acts/acts-result.service';
     ActsHeaderComponent,
     ActsChartsComponent,
     ActsGradeComponent
+    CourseListComponent,
+    MathjaxDirective,
+    YouKatexComponent,
+    YouChoiceComponent,
+    YouChoiceOptionlistComponent,
+    YouChoiceOptionComponent,
+    YouImgComponent,
+    YouFillblankComponent,
+    YouShortanswerComponent,
+    QuestionMstComponent,
+    ChoiceQuestionComponent,
+    FillblankQuestionComponent,
+    ShortanswerQuestionComponent,
+    YouSingleChoiceComponent,
+    ChoiceOptionComponent,
+    ShortanswerSubQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -82,6 +115,7 @@ import { ActsResultService } from 'app/services/acts/acts-result.service';
     HttpClientModule,
     TreeModule,
     routing,
+    KatexModule,
     TreeviewModule.forRoot(),
     ToastModule.forRoot(),
     MDBBootstrapModule.forRoot(),
@@ -91,10 +125,10 @@ import { ActsResultService } from 'app/services/acts/acts-result.service';
       apiKey: 'Your_api_key'
     })
   ],
-  providers: [MDBSpinningPreloader, CourseService,
-    TestService, MessageService, BookService, ActsResultComponent,
-    ActsResultService
-  ],
+  providers: [MDBSpinningPreloader, CourseService, TestService, MessageService,
+              ActsResultComponent, ActsResultService,
+              BookService, QuestionService],
+
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

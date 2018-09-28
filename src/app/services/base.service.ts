@@ -1,4 +1,4 @@
-import { environment } from './../../environments/environment';
+import { environment } from 'environments/environment';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
@@ -18,8 +18,6 @@ export class BaseService {
   protected log(message: string) {
     this.messageService.add('HeroService: ' + message);
   }
-
-
 
   protected handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

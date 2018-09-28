@@ -1,7 +1,6 @@
-
-
-  <div class="math-element" id="equation" >
-    {{equationTexString}}
-    </div>
-
- <img [src]="testImg">
+<!--Panel-->
+<div class="card  mb-3">
+  <h3 class="card-header primary-color white-text">题目预览</h3>
+  <mdb-you-choice [choiceQuestionList]="choiceList"></mdb-you-choice>
+  <mdb-you-fillblank [fillblankList]="fillblankList"></mdb-you-fillblank>
+</div>

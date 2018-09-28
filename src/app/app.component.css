@@ -1,0 +1,70 @@
+.unselected {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #387ef5;
+  color: #387ef5;
+  /* 宽度和高度需要相等 */
+}
+.selected {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #387ef5;
+  border: 1px solid #387ef5;
+  color: #ffffff;
+  /* 宽度和高度需要相等 */
+}
+.rightAnswer {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #32db64;
+  border: 1px solid #32db64;
+  color: #ffffff;
+  /* 宽度和高度需要相等 */
+}
+
+.mySelectionIsWrong {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #f53d3d;
+  border: 1px solid #f53d3d;
+  color: #ffffff;
+  /* 宽度和高度需要相等 */
+}
+
+.fillBlankAnswerBefore {
+  height: 30px;
+  width: 70px;
+  background-color: #ffffff;
+  border: 1px solid #387ef5;
+  color: #ffffff;
+}
+
+.fillBlankUnfilled {
+  height: 30px;
+  width: 70px;
+  background-color: #ffffff;
+  border: 1px solid #387ef5;
+  color: #387ef5;
+}
+
+.fillBlankMyAnswerIsRight {
+  height: 30px;
+  width: 70px;
+  background-color: #32db64;
+  border: 1px solid #32db64;
+  color: #ffffff;
+}
+
+.fillBlankMyAnswerIsWrong {
+  height: 30px;
+  width: 70px;
+  background-color: #f53d3d;
+  border: 1px solid #f53d3d;
+  color: #ffffff;
+  /* 宽度和高度需要相等 */
+}
